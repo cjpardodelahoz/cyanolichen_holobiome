@@ -12,6 +12,8 @@ sbatch scripts/merge_illumina_reads_8066.sh
 # Modify sample id file to match the clenaed sample ids
 sed -i 's/-/_/' scripts/sample_ids_8066.txt
 sed -i 's/_punto/_top_qiagen/' scripts/sample_ids_8066.txt
+# Run fastqc on Illumina raw reads from order 8066
+sbatch scripts/fastqc_illumina_raw_reads_8066.sh
 
 
 rsync -av scripts cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome

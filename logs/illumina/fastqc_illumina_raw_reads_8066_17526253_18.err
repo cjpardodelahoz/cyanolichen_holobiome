@@ -1,0 +1,17 @@
+Started analysis of m2_top_R1_all.fastq.gz
+Started analysis of m2_top_R2_all.fastq.gz
+Failed to process file m2_top_R1_all.fastq.gz
+uk.ac.babraham.FastQC.Sequence.SequenceFormatException: Midline 'CCGAGGCCGAGGCCGAAGFFFGGGGGAGFFGGFFGAGGAGFFGGFFF' didn't start with '+'
+	at uk.ac.babraham.FastQC.Sequence.FastQFile.readNext(FastQFile.java:172)
+	at uk.ac.babraham.FastQC.Sequence.FastQFile.next(FastQFile.java:125)
+	at uk.ac.babraham.FastQC.Analysis.AnalysisRunner.run(AnalysisRunner.java:76)
+	at java.lang.Thread.run(Thread.java:745)
+Approx 5% complete for m2_top_R2_all.fastq.gz
+Approx 10% complete for m2_top_R2_all.fastq.gz
+Approx 15% complete for m2_top_R2_all.fastq.gz
+Failed to process file m2_top_R2_all.fastq.gz
+uk.ac.babraham.FastQC.Sequence.SequenceFormatException: Midline 'AAAAACGCCGCCATGACCGTCGGCCAGATFFF1:11+TCCCCCGCCTGA3GGGCFF' didn't start with '+'
+	at uk.ac.babraham.FastQC.Sequence.FastQFile.readNext(FastQFile.java:172)
+	at uk.ac.babraham.FastQC.Sequence.FastQFile.next(FastQFile.java:125)
+	at uk.ac.babraham.FastQC.Analysis.AnalysisRunner.run(AnalysisRunner.java:76)
+	at java.lang.Thread.run(Thread.java:745)
