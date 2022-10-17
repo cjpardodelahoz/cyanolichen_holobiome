@@ -1,0 +1,7 @@
+Java 1.8.0_60
+FastQC 0.11.7
+
+Loading FastQC/0.11.7
+  Loading requirement: Java/1.8.0_60
+Analysis complete for m2_top_R1_all.fastq.gz
+Analysis complete for m2_top_R2_all.fastq.gz
