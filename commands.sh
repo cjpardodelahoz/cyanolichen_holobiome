@@ -14,7 +14,18 @@ sed -i 's/-/_/' scripts/sample_ids_8066.txt
 sed -i 's/_punto/_top_qiagen/' scripts/sample_ids_8066.txt
 # Run fastqc on Illumina raw reads from order 8066
 sbatch scripts/fastqc_illumina_raw_reads_8066.sh
+# Run fastqc on sample m2_top (index 18) after re merging the reads
+sbatch scripts/fastqc_illumina_raw_reads_8066_18.sh
+# Trim illumina reads with trimmomatic
+sbatch scripts/trim_illumina_reads_8066.sh
+# Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
+sbatch scripts/trim_illumina_reads_8066_18.sh
+# Run fastqc on Illumina trimmed reads
 
+# Assemble trimmed Illumina reads with metaSPades, each library separately
+sbatch scripts/assemble_illumina_bysample_8066.sh
+# Assemble trimmed Illumina reads with metaSPades, each library separately
+sbatch scripts/assemble_illumina_bysample_8066_350g.sh
 
 rsync -av scripts cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome
 rsync -av cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome/scripts .
