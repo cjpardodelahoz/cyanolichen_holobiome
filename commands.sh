@@ -30,3 +30,10 @@ sbatch scripts/assemble_illumina_bysample_8066_350g.sh
 rsync -av scripts cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome
 rsync -av cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome/scripts .
 rsync -av cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome/logs .
+
+# Assignation of taxonomic identity wiht kraken. This script was run inside the scripts/ directory
+sh seed_reads_tassignation_8066.sh /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/reads/ /hpc/group/bio1/diego/programs/kraken2/db08302022
+
+# Assignation of taxonomic identity to n1_top. This resulted a problematic sample for kraken by using the raw reads. I will use the trimmed reads to do the assignation
+sbatch scripts/n1_top_reads_tassignation_8066.sh
+
