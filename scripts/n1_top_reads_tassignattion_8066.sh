@@ -14,8 +14,8 @@ ls $reads | while read line;
 do kraken2 --db /hpc/group/bio1/diego/programs/kraken2/db08302022 --threads 16 --gzip-compressed \
 --paired /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/reads/n1_top_R1_paired.fq.gz \
 /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/reads/n1_top_R2_paired.fq.gz \
---output /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/kraken/krakens/n1_top.kraken \
---report /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/kraken/reports/n1_top.report;
+--output /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/kraken/krakens/n1_top/n1_top.kraken \
+--report /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/kraken/reports/n1_top/n1_top.report;
 #BRACKEN
 bracken -d /hpc/group/bio1/diego/programs/kraken2/db08302022 -i /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/kraken/reports/n1_top.report \
 -o /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/taxonomy/bracken/brackens/n1_top.bracken \
