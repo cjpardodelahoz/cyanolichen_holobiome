@@ -19,7 +19,7 @@
 
 # READING INPUT PARAMETERS NEEDED TO RUN THE PROGRAM
 suff=$1 # The suffix is the name of the sample. This will be used to find the scaffolds.fasta file inside the assemblies/sample folder
-thr=$2 #Please give the program a threshold of e-value. IMPORTANT use "E" instead of "e" for exponential expresions 
+thr=$2 #Please give the program a threshold of e-value. IMPORTANT use "*10^" instead of "e" for exponential expresions 
 clw=$3 #Tell the program if you have an aling ready (write 0) or you need to do an alignment of a fasta sequence (write 1)
 ftq=$4 # Location of the fasta file to be aligned if "1" was given ti $clw
 alg=$5 # Location of the alignment that the user is providing
@@ -52,10 +52,10 @@ if [ "$clw" -eq 1 ]; then
 		# MAKING THE ALINGMENT WITH CLUSTALW
 		clustalo -i $ftq -o analyses/illumina/hmmer/$gene/$suff/alingment/$suff.clw
 		smer=$(echo "analyses/illumina/hmmer/$gene/$suff/alingment/$suff.clw")
-		echo "The alingment has been done with ClustaW"
+		echo -e '\n'"The alingment has been done with ClustaW"'\n'
 	else
 		smer=$(echo "$alg")
-		echo "The program will proceed with the alignment located in ""$alg"
+		echo -e '\n'"The program will proceed with the alignment located in ""$alg"'\n'
 		fi
 
 # CREATING THE PROFILE WITH THE ALIGNMENT
@@ -79,7 +79,7 @@ cat analyses/illumina/hmmer/$gene/$suff/nhmmer/$suff.tbl | grep -v '#' | while r
 do hedr=${sign}(echo ${sign}line | cut -d' ' -f1);
 beg=${sign}(echo ${sign}line | cut -d' ' -f7); 
 endo=${sign}(echo ${sign}line | cut -d' ' -f8); 
-evl=${sign}(echo ${sign}line | cut -d' ' -f13 | sed 's/e/E/g');
+evl=${sign}(echo ${sign}line | cut -d' ' -f13 | sed 's/e/*10^/g');
 x1=${sign}(echo "${sign}evl <" $thr | bc -l);
 if [ "${sign}endo" -gt "${sign}beg" ] # We will rearrenge the output
 	then
@@ -105,6 +105,8 @@ seqkit subseq ${sign}hedr.fasta -r ${sign}beg:${sign}endo -o analyses/illumina/h
 rm temp.fasta;
 rm ${sign}hedr*;
 done
+
+cat analyses/illumina/hmmer/$gene/$suff/sequences/*.fasta > analyses/illumina/hmmer/$gene/$suff/sequences/${suff}-all.fasta
 EOF
 mv nhammer.sh $suff"_nhammer.sh"
 
