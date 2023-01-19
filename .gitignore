@@ -4,3 +4,6 @@ reads/
 .Rproj.user
 .Rhistory
 cyanolichen_holobiome.Rproj
+renv/
+!renv/activate.R
+
