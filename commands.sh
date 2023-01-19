@@ -26,6 +26,8 @@ sbatch scripts/trim_illumina_reads_8066_18.sh
 sbatch scripts/assemble_illumina_bysample_8066.sh
 # Assemble trimmed Illumina reads with metaSPades, each library separately
 sbatch scripts/assemble_illumina_bysample_8066_350g.sh
+# Assemble trimmed Illumina reads with metaSPades, each library separately
+sbatch scripts/assemble_illumina_bysample_8066_650g.sh
 
 rsync -av scripts cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome
 rsync -av cjp47@dcc-login.oit.duke.edu:/hpc/group/bio1/cyanolichen_holobiome/scripts .
@@ -36,4 +38,24 @@ sh seed_reads_tassignation_8066.sh /hpc/group/bio1/cyanolichen_holobiome/analyse
 
 # Assignation of taxonomic identity to n1_top. This resulted a problematic sample for kraken by using the raw reads. I will use the trimmed reads to do the assignation
 sbatch scripts/n1_top_reads_tassignation_8066.sh
+
+##### RNA READS #####
+
+# Generate file with sample ids from order 8117
+s8117=$(cd reads/rna/Carlos_8117_221128A7 && ls *.gz)
+for file in ${s8117} ; do
+ echo ${file%_S*} >> scripts/s8117.txt
+done
+cat scripts/s8117.txt | sort | uniq > scripts/sample_ids_8117.txt
+# Merge and sort illumina reads from order 8117
+mkdir analyses/rna/reads
+sbatch scripts/merge_rna_reads_8117.sh
+# Run fastqc on Illumina raw reads from order 8117
+sbatch scripts/fastqc_illumina_raw_reads_8117.sh
+# Run fastqc on sample m2_top (index 18) after re merging the reads
+sbatch scripts/fastqc_illumina_raw_reads_8066_18.sh
+# Trim illumina reads with trimmomatic
+sbatch scripts/trim_illumina_reads_8066.sh
+# Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
+sbatch scripts/trim_illumina_reads_8066_18.sh
 
