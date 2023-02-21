@@ -1,0 +1,16 @@
+c1_top
+c2_top
+c3_top
+c3_top_qiagen
+e1_top
+e2_top
+e3_top
+e3_top_qiagen
+m1_top
+m2_top
+m3_top
+m3_top_qiagen
+n1_top
+n2_top
+n3_top
+n3_top_qiagen
