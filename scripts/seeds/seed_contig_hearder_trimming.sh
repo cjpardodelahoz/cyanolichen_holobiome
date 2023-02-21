@@ -6,6 +6,19 @@ echo -e 'CONTIG HEADER CHANGE FOR BINNING WITH VAMB'"\n"
 
 # DATE OF CREATION: 02/08/2023
 
+#SCRIPT CONSIDERATIONS:
+# 1) The program is designed to be run inside the scripts folder of the project called cyanolichen_holobiome: https://github.com/cjpardodelahoz/cyanolichen_holobiome'
+# 2) There is a flag in the kraken2 line to address that the reads are in gzip files.
+# 3) The output of the program is a script that can be used either in a SLURM cluster or in a local computer (variable "slurm")
+# 4) The program needs the user to have a file with the name of the samples to process. File as input in the variable "samp"
+# 5) It is mandatory to have a folder where each of the samples reads are located. Each one in a subfolder.
+# 6) Mandatory that all the Forward files have the same suffix after the name of the sample (e.g. _R1_all.fastq.gz)
+# 7) Mandatory that all the Reverse files have the same suffix after the name of the sample (e.g. _R2_all.fastq.gz)
+# 8) Array variables in SLURM.
+#       %A = job ID
+#       %a = number of iteration in the array (i.e. SLURM_ARRAY_TASK_ID)
+#       For example, if your job ID is 2525. The variables "%A , %a" will be substituted by: 2525_1, 2525_2,2525_3, and so on.
+
 # DECLARE USEFUL VARIABLES FOR THE PROCESS:
 sign='$'
 
@@ -25,11 +38,12 @@ if [ ${slurm} -eq 1 ];
         script_dir=${10} # Directory where to place the script once it has been created
         par=${11} # The name of the partition where the user wants the job to be run
         n_samp=$(cat ${samp} | sort | uniq | wc -l) # The number of iterations in the array of SLURM
+        total_ram=$(echo $(("${cores}" * "${ram}")))
     else
         max_jobs=${7} # The maximun number of jobs that the user wants to run in the local computer
 fi
 
-echo -e 'This are the variables that you specified to be used with the program: '"\n"
+echo -e 'These are the variables that you specified with the program: '"\n"
 echo -e 'Prefix for the output files'"\t""${pref}"
 echo -e 'File with the name of the samples:'"\t""${samp}"
 echo -e 'Location of contigs:'"\t""${contigs_dir}"
@@ -39,14 +53,15 @@ if [ ${slurm} -eq 1 ];
     then
         echo -e 'You chose to run the program in a SLURM-based cluster'
         echo -e 'Gb to use to each thread:'"\t""${ram}"
+        echo -e 'Total of RAM to use in each process:'"\t""${total_ram}"
         echo -e 'Name for output files:'"\t""${log_files}"
         echo -e 'Directory to locate the logs:'"\t""${log_dir}"
         echo -e 'Location to put the generated script:'"\t""${script_dir}"
         echo -e 'Partition to use in SLURM:'"\t""${par}"
-        echo -e 'The number of samples to process:'"\t""${n_samp}"
+        echo -e 'The number of samples to process:'"\t""${n_samp}""\n"
     else
         echo -e 'You chose to run the program in a local computer'
-        echo -e 'Maximun number of jobs to run at once:'"\t""${max_jobs}"
+        echo -e 'Maximun number of jobs to run at once:'"\t""${max_jobs}""\n"
 fi
 
 
@@ -76,6 +91,12 @@ if [ ${slurm} -eq 1 ];
             then
                 echo "\$log_files is empty. Using default threads= contigs_header_trimming "
                 log_files=$(echo "contigs_header_trimming")
+        fi
+
+        if [ -z "$par" ];
+            then
+                echo "\$par is empty. Using default partition= common "
+                par=$(echo "common")
         fi
 
 # MAIN SCRIPT
@@ -111,11 +132,8 @@ if [ ${slurm} -eq 1 ];
         # COPYING THE CONTIG OF EACH SAMPLE TO A NEW DIRECTORY
         cp ${contigs_dir}/${sign}{count}/contigs.fasta ${sign}{new_contigs}/${sign}{count}_contigs.fasta
 
-        grep '>' ${sign}{new_contigs}/${sign}{count}_contigs.fasta | while read line; do 
-                name=${sign}(echo ${sign}{line} | sed "s/>//g" );
-                label=${sign}(echo '>'"${sign}{count}"'C'"${sign}{name}");
-                sed -i "s/${sign}{line}/${sign}{label}/g" ${sign}{new_contigs}/${sign}{count}_contigs.fasta;
-        done;
+        label=${sign}(echo ">""${sign}{count}""C")
+        sed -i "s/>/${sign}{label}/g" ${sign}{new_contigs}/${sign}{count}_contigs.fasta
         echo -e "\t"'Done with the fasta file: '"${sign}{count}"'_contigs.fasta'
 EOF
 
