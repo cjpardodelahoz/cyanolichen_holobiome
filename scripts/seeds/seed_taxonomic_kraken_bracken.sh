@@ -6,6 +6,21 @@ echo -e 'TAXONOMIC ASSIGNATION WITH KRAKNE2-BRACKEN'"\n"
 
 # DATE OF CREATION: 02/02/2023
 
+#SCRIPT CONSIDERATIONS:
+# 1) The program is designed to be run inside the scripts folder of the project called cyanolichen_holobiome: https://github.com/cjpardodelahoz/cyanolichen_holobiome'
+# 2)There is a flag in the kraken2 line to address that the reads are in gzip files.
+# 3) The output of the program is a script that can be used either in a SLURM cluster or in a local computer (variable "slurm")
+# 4) The program needs the user to have a file with the name of the samples to process. File as input in the variable "samp"
+# 5) It is mandatory to have a folder where each of the samples reads are located. Each one in a subfolder.
+# 6) Mandatory that all the Forward files have the same suffix after the name of the sample (e.g. _R1_all.fastq.gz)
+# 7) Mandatory that all the Reverse files have the same suffix after the name of the sample (e.g. _R2_all.fastq.gz)
+# 8) Array variables in SLURM.
+#       %A = job ID
+#       %a = number of iteration in the array (i.e. SLURM_ARRAY_TASK_ID)
+#       For example, if your job ID is 2525. The variables "%A , %a" will be substituted by: 2525_1, 2525_2,2525_3, and so on.
+# 9) Location of kraken2 database inside the cluster:            /hpc/group/bio1/diego/programs/kraken2/01172023
+# 10) Location of the "names.dmp" file inside the cluster:        /hpc/group/bio1/cyanolichen_holobiome/documents/names.dmp
+
 # PROGRAMS THIS SCRIPT USE (if the user does not have mamba installed, just change "mamba" and write "conda" instead in the next lines):
 #   Name    Link    Installation
 #   Kraken2 https://github.com/DerrickWood/kraken2/blob/master/docs/MANUAL.markdown mamba install kraken2
@@ -36,6 +51,7 @@ slurm=${16} # Indicate the program if you would like to run the output script in
 if [ ${slurm} -eq 1 ]; 
     then
         ram=${17} # Ammount of Gb to use to each thread
+        total_ram=$(echo $(("${cores}" * "${ram}")))
         log_files=${18} # The name of both, the output and the error files that SLURM creates
         log_dir=${19} # Directory where to place a folder to put the logs
         script_dir=${20} # Directory where to place the script once it has been created
@@ -93,6 +109,7 @@ if [ ${slurm} -eq 1 ];
     then
         echo -e 'You chose to run the program in a SLURM-based cluster'
         echo -e 'Gb to use to each thread:'"\t""${ram}"
+        echo -e 'Total of RAM to use in each process:'"\t""${total_ram}"
         echo -e 'Name for output files:'"\t""${log_files}"
         echo -e 'Directory to locate the logs:'"\t""${log_dir}"
         echo -e 'Location to put the generated script:'"\t""${script_dir}"
@@ -221,8 +238,8 @@ if [ ${slurm} -eq 1 ];
                 -r ${sign}{k_reports}/${sign}{count}.report \
                 -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                 -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/unclassified_${sign}{count}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/unclassified_${sign}{count}_2.fq -t 0 \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_1.fq \
+                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_2.fq -t 0 \
                 --fastq-output --include-children
             else
                 echo "The user does not want to extract the unclassified reads"
@@ -240,8 +257,8 @@ if [ ${slurm} -eq 1 ];
                 -r ${sign}{k_reports}/${sign}{count}.report \
                 -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                 -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/non_bacterial_${sign}{count}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/non_bacterial_${sign}{count}_2.fq -t 2 \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_1.fq \
+                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_2.fq -t 2 \
                 --fastq-output --include-children --exclude
             else
                 echo "The user does not want to extract the non-Bacterial reads"
@@ -261,8 +278,8 @@ if [ ${slurm} -eq 1 ];
                 -r ${sign}{k_reports}/${sign}{count}.report \
                 -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                 -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${first_otu}_${sign}{count}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${first_otu}_${sign}{count}_2.fq -t ${sign}{id_1_otu} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_1.fq \
+                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_2.fq -t ${sign}{id_1_otu} \
                 --fastq-output --include-children
         fi
 
@@ -280,8 +297,8 @@ if [ ${slurm} -eq 1 ];
                 -r ${sign}{k_reports}/${sign}{count}.report \
                 -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                 -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${second_otu}_${sign}{count}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${second_otu}_${sign}{count}_2.fq -t ${sign}{id_2_otu} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_1.fq \
+                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_2.fq -t ${sign}{id_2_otu} \
                 --fastq-output --include-children
         fi
 
@@ -299,14 +316,14 @@ if [ ${slurm} -eq 1 ];
                 -r ${sign}{k_reports}/${sign}{count}.report \
                 -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                 -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${third_otu}_${sign}{count}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${third_otu}_${sign}{count}_2.fq -t ${sign}{id_3_otu} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_1.fq \
+                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_2.fq -t ${sign}{id_3_otu} \
                 --fastq-output --include-children
         fi
 EOF
 
         # SUBMITTING WORK TO THE CLUSTER
-        sbatch ${pref}_taxonomy_kraken_bracken.sh
+        #sbatch ${pref}_taxonomy_kraken_bracken.sh
 
         # MOVING THE SCRIPT TO THE DESIRED LOCATION
         mv ${pref}_taxonomy_kraken_bracken.sh ${script_dir}/${pref}_taxonomy_kraken_bracken.sh
@@ -416,8 +433,8 @@ EOF
                     -r ${sign}{k_reports}/${sign}{count}.report \
                     -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                     -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                    -o ${sign}{sequences}/${sign}{count}/unclassified_${sign}{count}_1.fq \
-                    -o2 ${sign}{sequences}/${sign}{count}/unclassified_${sign}{count}_2.fq -t 0 \
+                    -o ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_1.fq \
+                    -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_2.fq -t 0 \
                     --fastq-output --include-children \
                     # Send fastp job to the background
                     &;
@@ -441,8 +458,8 @@ EOF
                     -r ${sign}{k_reports}/${sign}{count}.report \
                     -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                     -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                    -o ${sign}{sequences}/${sign}{count}/non_bacterial_${sign}{count}_1.fq \
-                    -o2 ${sign}{sequences}/${sign}{count}/non_bacterial_${sign}{count}_2.fq -t 2 \
+                    -o ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_1.fq \
+                    -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_2.fq -t 2 \
                     --fastq-output --include-children --exclude \
                     # Send fastp job to the background
                     &;
@@ -469,8 +486,8 @@ EOF
                     -r ${sign}{k_reports}/${sign}{count}.report \
                     -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                     -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                    -o ${sign}{sequences}/${sign}{count}/${first_otu}_${sign}{count}_1.fq \
-                    -o2 ${sign}{sequences}/${sign}{count}/${first_otu}_${sign}{count}_2.fq -t ${sign}{id_1_otu} \
+                    -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_1.fq \
+                    -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_2.fq -t ${sign}{id_1_otu} \
                     --fastq-output --include-children \
                     # Send fastp job to the background
                     &;
@@ -497,8 +514,8 @@ EOF
                     -r ${sign}{k_reports}/${sign}{count}.report \
                     -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                     -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                    -o ${sign}{sequences}/${sign}{count}/${second_otu}_${sign}{count}_1.fq \
-                    -o2 ${sign}{sequences}/${sign}{count}/${second_otu}_${sign}{count}_2.fq -t ${sign}{id_2_otu} \
+                    -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_1.fq \
+                    -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_2.fq -t ${sign}{id_2_otu} \
                     --fastq-output --include-children \
                     # Send fastp job to the background
                     &;
@@ -525,8 +542,8 @@ EOF
                     -r ${sign}{k_reports}/${sign}{count}.report \
                     -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
                     -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                    -o ${sign}{sequences}/${sign}{count}/${third_otu}_${sign}{count}_1.fq \
-                    -o2 ${sign}{sequences}/${sign}{count}/${third_otu}_${sign}{count}_2.fq -t ${sign}{id_3_otu} \
+                    -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_1.fq \
+                    -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_2.fq -t ${sign}{id_3_otu} \
                     --fastq-output --include-children \
                     # Send fastp job to the background
                     &;
