@@ -27,3 +27,24 @@ ls /work/dg304/dala/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_en
 # Creating files to hold the names of the new bins
 ls /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_thalli/8066_thalli_bins/ | while read line; do cut -d. -f1; done > /hpc/group/bio1/cyanolichen_holobiome/documents/binning/illumina/8066_thalli_bin_names.txt
 ls /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_env/8066_env_bins/ | while read line; do cut -d. -f1; done > /hpc/group/bio1/cyanolichen_holobiome/documents/binning/illumina/8066_env_bin_names.txta
+# Running BUSCO for the 8066_thalli samples
+scripts/seeds/seed_busco_content_prediction.sh 8066_thalli /hpc/group/bio1/cyanolichen_holobiome/documents/sample_names/8066_thalli_sample_names.txt yes busco analyses/illumina 8 geno no - yes no /hpc/group/bio1/diego/programs/busco/busco_downloads /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_thalli/8066_thalli_bins .fna yes 8 busco logs/illumina/busco/8066_thalli scripts/illumina/busco/8066_thalli scavenger yes
+# Running BUSCO for the 8066_env samples
+scripts/seeds/seed_busco_content_prediction.sh 8066_env /hpc/group/bio1/cyanolichen_holobiome/documents/sample_names/8066_environment_sample_names.txt yes busco analyses/illumina 8 geno no - yes no /hpc/group/bio1/diego/programs/busco/busco_downloads /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_env/8066_env_bins .fna yes 8 busco logs/illumina/busco/8066_env scripts/illumina/busco/8066_env scavenger yes
+# Some of the results from BUSCO have a different error than not being able to retrive any sequences (i.e. out of memory or that they need augusuts for the prediction) But they are from little samples. So I ignored them.
+# I will put the bins identified as some of the taxa of interes inside the documents folder for the respective set of samples
+# For 8066_thalli
+# Ascomycota
+ls analyses/illumina/busco/8066_thalli/ | while read line; do tax=$(ls analyses/illumina/busco/8066_thalli/$line | grep 'run_'); echo -e $line'\t'$tax; done | grep 'asco' | awk -F ' ' '{print$1}' > documents/illumina/8066_thalli/busco/ascomycota_busco_bins.txt
+# Nostoc
+ls analyses/illumina/busco/8066_thalli/ | while read line; do tax=$(ls analyses/illumina/busco/8066_thalli/$line | grep 'run_'); echo -e $line'\t'$tax; done | grep 'nos' | awk -F ' ' '{print$1}' > documents/illumina/8066_thalli/busco/nostocales_busco_bins.txt
+# Rhizobiales
+ls analyses/illumina/busco/8066_thalli/ | while read line; do tax=$(ls analyses/illumina/busco/8066_thalli/$line | grep 'run_'); echo -e $line'\t'$tax; done | grep 'rhiz' > documents/illumina/8066_thalli/busco/rhizobiales_busco_info.tsv
+ls analyses/illumina/busco/8066_thalli/ | while read line; do tax=$(ls analyses/illumina/busco/8066_thalli/$line | grep 'run_'); echo -e $line'\t'$tax; done | grep 'rhiz' | awk -F ' ' '{print$1}' > documents/illumina/8066_thalli/busco/rhizobiales_busco_bins.txt
+# Eukaryotic ones
+ls analyses/illumina/busco/8066_thalli/ | while read line; do tax=$(ls analyses/illumina/busco/8066_thalli/$line | grep 'run_'); echo -e $line'\t'$tax; done |grep 'euk'| grep -v 'asco' | awk -F ' ' '{print$1}' > documents/illumina/8066_thalli/busco/eukaryota_busco_bins.txt
+# For 8066_env
+# Nostoc
+ls analyses/illumina/busco/8066_env/ | while read line; do tax=$(ls analyses/illumina/busco/8066_env/$line | grep 'run_'); echo -e $line'\t'$tax; done | grep 'nos'  > documents/illumina/8066_env/busco/8066_env_nostocales_info.tsv
+# I will run the busco analysis to the eukaryotic 8066_thalli samples to try to obtain better results for the ascomycota MAGs
+scripts/seeds/seed_busco_content_prediction.sh euka_8066_thalli documents/illumina/8066_thalli/busco/eukaryota_busco_bins.txt yes busco analyses/illumina 8 geno yes /hpc/group/bio1/diego/programs/busco/busco_downloads/lineages/ascomycota_odb10 yes yes /hpc/group/bio1/diego/programs/busco/busco_downloads/lineages/ascomycota_odb10 /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_thalli/8066_thalli_bins .fna yes 8 busco logs/illumina/busco/euka_8066_thalli scripts/illumina/busco/euka_8066_thalli scavenger yes
