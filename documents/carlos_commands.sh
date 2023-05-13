@@ -59,3 +59,20 @@ sbatch scripts/trim_illumina_reads_8066.sh
 # Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
 sbatch scripts/trim_illumina_reads_8066_18.sh
 
+##### CO-ASSEMBLY OF NOSTOC READS FROM ENV METAGENOMES 8066 #####
+
+# Diego extracted the nostoc reads from the environmental metagenomes.
+# They are currently in the work mirror directory under 
+# analyses/illumina/taxonomy/sequences
+
+# Make directory for coaassemblies
+mkdir -p analyses/illumina/coassembly/all_reads
+mkdir -p analyses/illumina/coassembly/nostoc_reads
+# Make directories to storec oassembly scripts and logs
+mkdir -p scripts/illumina/coassembly
+mkdir -p logs/illumina/coassembly
+
+
+
+
+
