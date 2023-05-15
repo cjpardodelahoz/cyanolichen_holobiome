@@ -248,8 +248,8 @@ if [ ${slurm} = "yes" ];
     		fi
 
             # EXECUTING SPADES GENERAL
-            spades.py -1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-            -2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff}\
+            spades.py -1 ${reads_dir}/${sign}{count}/${sign}{count}_paired${forw_suff} \
+            -2 ${reads_dir}/${sign}{count}/${sign}{count}_paired${rev_suff}\
             -o ${sign}{assembly} -t ${cores} \
             -k 21,29,39,49,59,79,97 -m ${total_ram} \
             ${metagenome} ${careful} ${rna_seq} 
@@ -266,8 +266,8 @@ if [ ${slurm} = "yes" ];
             # FOR PLASMIDS
             if [ ${plasmid} = "yes" ];
                 then
-                    spades.py -1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                    -2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
+                    spades.py -1 ${reads_dir}/${sign}{count}/${sign}{count}_paired${forw_suff} \
+                    -2 ${reads_dir}/${sign}{count}/${sign}{count}_paired${rev_suff} \
                     -o ${sign}{plasmids} -t ${cores} \
                     -k 21,29,39,49,59,79,97 -m ${total_ram} --meta --plasmid
                 else

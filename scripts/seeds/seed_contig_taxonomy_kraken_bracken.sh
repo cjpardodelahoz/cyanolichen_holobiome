@@ -18,7 +18,7 @@ echo -e 'TAXONOMIC ASSIGNATION WITH KRAKNE2-BRACKEN'"\n"
 #       %A = job ID
 #       %a = number of iteration in the array (i.e. SLURM_ARRAY_TASK_ID)
 #       For example, if your job ID is 2525. The variables "%A , %a" will be substituted by: 2525_1, 2525_2,2525_3, and so on.
-# 9) Location of kraken2 database inside the cluster:            /hpc/group/bio1/diego/programs/kraken2/04152023
+# 9) Location of kraken2 database inside the cluster:            /hpc/group/bio1/diego/programs/kraken2/01172023
 # 10) Location of the "names.dmp" file inside the cluster:        /hpc/group/bio1/cyanolichen_holobiome/documents/names.dmp
 
 # PROGRAMS THIS SCRIPT USE (if the user does not have mamba installed, just change "mamba" and write "conda" instead in the next lines):
@@ -47,23 +47,25 @@ cores=${6} # The number of cores to use.
 reads_dir=${7} # Location of the folder where the original reads are saved. Absolute paths are preferible
 forw_suff=${8} # Suffix of the forward reads files (e.g. _R1_all.fastq.gz)
 rev_suff=${9} # Suffix of the forward reads files (e.g. _R2_all.fastq.gz)
-names_path=${10} # Location of the "names.dmp" file
-db_path=${11} # Location of kraken-bracken database
-get_unclassified=${12} # Tell the interfase if you want the unclassified reads in a separate file: 1->Yes 0->No
-get_nonbacterial=${13} # Tell the interfase if you want the reads not classified as Bacteria in a separate file: 1->Yes 0->No
-first_otu=${14} # First Lineage of interest. If you do not want to extract a lineage of interest, type "-"
-second_otu=${15} # Second lineaje of interes. If you do not want to extract a lineage of interest, type "-"
-third_otu=${16} # Third lineaje of interes. If you do not want to extract a lineage of interest, type "-"
-slurm=${17} # Indicate the program if you would like to run the output script in a SLURM based cluster: 1->Yes 0->No
+sample_dir=${10} # Location of the single files to classify
+sample_suff=${11} # Suffix of the files to classift
+names_path=${12} # Location of the "names.dmp" file
+db_path=${13} # Location of kraken-bracken database
+get_unclassified=${14} # Tell the interfase if you want the unclassified reads in a separate file: 1->Yes 0->No
+get_nonbacterial=${15} # Tell the interfase if you want the reads not classified as Bacteria in a separate file: 1->Yes 0->No
+first_otu=${16} # First Lineage of interest. If you do not want to extract a lineage of interest, type "-"
+second_otu=${17} # Second lineaje of interes. If you do not want to extract a lineage of interest, type "-"
+third_otu=${18} # Third lineaje of interes. If you do not want to extract a lineage of interest, type "-"
+slurm=${19} # Indicate the program if you would like to run the output script in a SLURM based cluster: 1->Yes 0->No
 if [ ${slurm} = "yes" ]; 
     then
-        ram=${18} # Ammount of Gb to use to each thread
+        ram=${20} # Ammount of Gb to use to each thread
         total_ram=$(echo $(("${cores}" * "${ram}")))
-        log_files=${19} # The name of both, the output and the error files that SLURM creates
-        log_dir=${20} # Directory where to place a folder to put the logs
-        script_dir=${21} # Directory where to place the script once it has been created
-        par=${22} # The name of the partition where the user wants the job to be run
-        w_execute=${23} # Tell the script if you want to execute it on the cluster right after producing the final script
+        log_files=${21} # The name of both, the output and the error files that SLURM creates
+        log_dir=${22} # Directory where to place a folder to put the logs
+        script_dir=${23} # Directory where to place the script once it has been created
+        par=${24} # The name of the partition where the user wants the job to be run
+        w_execute=${25} # Tell the script if you want to execute it on the cluster right after producing the final script
         n_samp=$(cat ${samp} | sort | uniq | wc -l) # The number of iterations in the array of SLURM
     else
         max_jobs=${17} # The maximun number of jobs that the user wants to run in the local computer
@@ -81,6 +83,8 @@ echo -e 'Threads to use in the process:'"\t""\t""\t""${cores}"
 echo -e 'Location of the reads of the samples:'"\t""\t""\t""${reads_dir}"
 echo -e 'Suffix of the forward reads files:'"\t""\t""\t""${forw_suff}"
 echo -e 'Suffix of the reverse reads files:'"\t""\t""\t""${rev_suff}"
+echo -e 'Path to the files to be classified:'"\t""\t""\t""${sample_dir}"
+echo -e 'Suffix of the query files:'"\t""\t""\t""${sample_suff}"
 echo -e 'Location of the "names.dmp" file:'"\t""\t""\t""${names_path}"
 echo -e 'Location of kraken-bracken database:'"\t""\t""\t""${db_path}"
 
@@ -224,16 +228,15 @@ if [ ${slurm} = "yes" ];
         fi
 
         # KRAKEN
-        kraken2 --db ${db_path} --threads ${cores} --paired ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-        ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-        --output ${sign}{krakens}/${sign}{count}.kraken \
-        --report ${sign}{k_reports}/${sign}{count}.report
+        #kraken2 --db ${db_path} --threads ${cores} ${sample_dir}/${sign}{count}${sample_suff} \
+        #--output ${sign}{krakens}/${sign}{count}.kraken \
+        #--report ${sign}{k_reports}/${sign}{count}.report
         
         # BRACKEN
-        bracken -d ${db_path} \
-        -i ${sign}{k_reports}/${sign}{count}.report \
-        -o ${sign}{brackens}/${sign}{count}.bracken \
-        -w ${sign}{b_reports}/${sign}{count}_bracken.report -r 150 -t 50
+        #bracken -d ${db_path} \
+        #-i ${sign}{k_reports}/${sign}{count}.report \
+        #-o ${sign}{brackens}/${sign}{count}.bracken \
+        #-w ${sign}{b_reports}/${sign}{count}_bracken.report -r 150 -t 50
         
         # CREATING A FILE TO SAVE THE LINEAGE INFORMATION 
         mkdir -p ${sign}{sequences}/${sign}{count}
@@ -250,11 +253,9 @@ if [ ${slurm} = "yes" ];
                 echo -e "\n""Extracting unclassified reads in fastq from sample: ""${sign}{count}"
                 extract_kraken_reads.py -k ${sign}{krakens}/${sign}{count}.kraken \
                 -r ${sign}{k_reports}/${sign}{count}.report \
-                -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified_2.fq -t 0 \
-                --fastq-output --include-children
+                -s ${sample_dir}/${sign}{count}${sample_suff} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_unclassified.fasta \
+                -t 0 --include-children
             else
                 echo "The user does not want to extract the unclassified reads"
         fi
@@ -269,11 +270,9 @@ if [ ${slurm} = "yes" ];
                 echo -e "\n""Extracting non bacterial reads in fastq from sample: ""${sign}{count}"
                 extract_kraken_reads.py -k ${sign}{krakens}/${sign}{count}.kraken \
                 -r ${sign}{k_reports}/${sign}{count}.report \
-                -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial_2.fq -t 2 \
-                --fastq-output --include-children --exclude
+                -s ${sample_dir}/${sign}{count}${sample_suff} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_non_bacterial.fasta \
+                -t 2 --include-children --exclude
             else
                 echo "The user does not want to extract the non-Bacterial reads"
         fi
@@ -290,11 +289,9 @@ if [ ${slurm} = "yes" ];
                 echo -e "\n""Extracting ""${first_otu}"" reads in fastq from sample: ""${sign}{count}"
                 extract_kraken_reads.py -k ${sign}{krakens}/${sign}{count}.kraken \
                 -r ${sign}{k_reports}/${sign}{count}.report \
-                -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}_2.fq -t ${sign}{id_1_otu} \
-                --fastq-output --include-children
+                -s ${sample_dir}/${sign}{count}${sample_suff} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${first_otu}.fasta \
+                -t ${sign}{id_1_otu} --include-children
         fi
 
         # 2nd READ EXTRACTION
@@ -309,11 +306,9 @@ if [ ${slurm} = "yes" ];
                 echo -e "\n""Extracting ""${second_otu}"" reads in fastq from sample: ""${sign}{count}"
                 extract_kraken_reads.py -k ${sign}{krakens}/${sign}{count}.kraken \
                 -r ${sign}{k_reports}/${sign}{count}.report \
-                -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}_2.fq -t ${sign}{id_2_otu} \
-                --fastq-output --include-children
+                -s ${sample_dir}/${sign}{count}${sample_suff} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${second_otu}.fasta \
+                -t ${sign}{id_2_otu} --include-children
         fi
 
         # 3th READ EXTRACTION
@@ -328,11 +323,9 @@ if [ ${slurm} = "yes" ];
                 echo -e "\n""Extracting ""${third_otu}"" reads in fastq from sample: ""${sign}{count}"
                 extract_kraken_reads.py -k ${sign}{krakens}/${sign}{count}.kraken \
                 -r ${sign}{k_reports}/${sign}{count}.report \
-                -s1 ${reads_dir}/${sign}{count}/${sign}{count}${forw_suff} \
-                -s2 ${reads_dir}/${sign}{count}/${sign}{count}${rev_suff} \
-                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_1.fq \
-                -o2 ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}_2.fq -t ${sign}{id_3_otu} \
-                --fastq-output --include-children
+                -s ${sample_dir}/${sign}{count}${sample_suff} \
+                -o ${sign}{sequences}/${sign}{count}/${sign}{count}_${third_otu}.fasta \
+                -t ${sign}{id_3_otu} --include-children
         fi
 EOF
         # MOVING THE SCRIPT TO THE DESIRED LOCATION
