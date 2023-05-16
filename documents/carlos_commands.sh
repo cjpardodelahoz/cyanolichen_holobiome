@@ -65,6 +65,8 @@ sbatch scripts/trim_illumina_reads_8066_18.sh
 # They are currently in the work mirror directory under 
 # analyses/illumina/taxonomy/sequences
 
+# Generate assembly
+
 # Make directory for coaassemblies
 mkdir -p analyses/illumina/coassembly/full_library
 mkdir -p analyses/illumina/coassembly/nostoc_only
@@ -75,8 +77,12 @@ mkdir -p logs/illumina/coassembly
 sbatch scripts/illumina/coassembly/merge_and_trim_nostoc_8066_env.sh
 sbatch scripts/illumina/coassembly/coassembly_nostoc_8066_env.sh
 
+# Binning and curation with ANVIO
 
-
+# Create anvio contigs database
+sbatch scripts/illumina/coassembly/anvio_contigs_db_nostoc_8066_env.sh
+# Map corrected reads to assembly and generate indexed BAM file
+sbatch scripts/illumina/coassembly/map_index_nostoc_8066_env.sh
 
 
 
