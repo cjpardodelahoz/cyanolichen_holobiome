@@ -66,11 +66,15 @@ sbatch scripts/trim_illumina_reads_8066_18.sh
 # analyses/illumina/taxonomy/sequences
 
 # Make directory for coaassemblies
-mkdir -p analyses/illumina/coassembly/all_reads
-mkdir -p analyses/illumina/coassembly/nostoc_reads
-# Make directories to storec oassembly scripts and logs
+mkdir -p analyses/illumina/coassembly/full_library
+mkdir -p analyses/illumina/coassembly/nostoc_only
+# Make directories to store coassembly scripts and logs
 mkdir -p scripts/illumina/coassembly
 mkdir -p logs/illumina/coassembly
+# Merge, pool, and coassemble the extracted Nostoc reads
+sbatch scripts/illumina/coassembly/merge_and_trim_nostoc_8066_env.sh
+sbatch scripts/illumina/coassembly/coassembly_nostoc_8066_env.sh
+
 
 
 
