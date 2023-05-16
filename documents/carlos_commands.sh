@@ -81,8 +81,13 @@ sbatch scripts/illumina/coassembly/coassembly_nostoc_8066_env.sh
 
 # Create anvio contigs database
 sbatch scripts/illumina/coassembly/anvio_contigs_db_nostoc_8066_env.sh
+# Directory for mapped reads
+mkdir analyses/illumina/coassembly/nostoc_only/anvio/bams
+# Build assembly database
+sbatch scripts/illumina/coassembly/build_assembly_db_nostoc_8066_env.sh
 # Map corrected reads to assembly and generate indexed BAM file
 sbatch scripts/illumina/coassembly/map_index_nostoc_8066_env.sh
-
+# Generate anvio profiles with sample specific mapped reads
+sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
 
 
