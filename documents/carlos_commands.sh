@@ -89,5 +89,6 @@ sbatch scripts/illumina/coassembly/build_assembly_db_nostoc_8066_env.sh
 sbatch scripts/illumina/coassembly/map_index_nostoc_8066_env.sh
 # Generate anvio profiles with sample specific mapped reads
 sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
-
+# Merge anvio profiles for manual binning
+sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
 
