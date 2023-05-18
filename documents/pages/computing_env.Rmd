@@ -1,0 +1,36 @@
+---
+title: "Computing environment"
+author: "Carlos Pardo De la Hoz"
+date: "2023-05-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Conda environments
+
+### Nanopack
+A collection of packages for for processing ONT data
+```{bash nanopack, eval=FALSE}
+conda create -n nanopack
+conda activate nanopack
+conda install python=3
+pip install nanopack
+```
+
+### OPERA-MS
+A hybrid metagenomic assembly that uses a short-reads first approach. I had to create a a conda environment which wraps the perl module dependencies required, but it worked.
+```{bash opera-ms, eval=FALSE}
+conda create -n OPERA-MS python=3.6
+conda activate OPERA-MS
+conda install -c bioconda perl-app-cpanminus
+conda install -c r r-base
+export PERL5LIB=/hpc/home/cjp47/miniconda3/envs/OPERA-MS/lib/5.26.2:$PERL5LIB
+git clone https://github.com/CSB5/OPERA-MS.git
+cd OPERA-MS
+make
+perl OPERA-MS.pl check-dependency
+```
+
