@@ -92,3 +92,10 @@ sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
 # Merge anvio profiles for manual binning
 sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
 
+##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
+
+# Long read QC with NanoQC
+
+# Adapter removal/trimming
+
+# Hybrid assembly with Opera-MS
