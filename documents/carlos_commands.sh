@@ -94,7 +94,13 @@ sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
 
 ##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
 
-# Long read QC with NanoQC
+# Merge and rename nanopore reads with sample names
+sbatch scripts/ont/qc/merge_rename_ont_8026.sh
+# File with 8026 sample names
+cat documents/sample_names/8026_sample_key.txt | cut -f 2 > documents/sample_names/8026_sample_names.txt
+# Long read QC with NanoQC and LongQC
+sbatch scripts/ont/qc/nanoqc_8026.sh
+sbatch scripts/ont/qc/longqc_8026.sh
 
 # Adapter removal/trimming
 
