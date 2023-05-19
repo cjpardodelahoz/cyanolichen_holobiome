@@ -19,5 +19,3 @@ gunzip -c analyses/ont/reads/${sample}.fastq.gz > analyses/ont/reads/${sample}.f
 python ${longqc_path}/longQC.py sampleqc --preset ont-ligation \
   -o analyses/ont/qc/${sample}/pretrim/longqc \
   -p 4 analyses/ont/reads/${sample}.fastq
-# Remove unzipped reads
-rm analyses/ont/reads/${sample}.fastq
