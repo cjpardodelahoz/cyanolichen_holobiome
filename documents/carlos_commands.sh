@@ -98,10 +98,16 @@ sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
 sbatch scripts/ont/qc/merge_rename_ont_8026.sh
 # File with 8026 sample names
 cat documents/sample_names/8026_sample_key.txt | cut -f 2 > documents/sample_names/8026_sample_names.txt
-# Long read QC with NanoQC and LongQC
+# Long read QC pretrim with NanoQC and LongQC
 sbatch scripts/ont/qc/nanoqc_pretrim_8026.sh
 sbatch scripts/ont/qc/longqc_pretrim_8026.sh
-
-# Adapter removal/trimming
+# Trim and filter reads
+sbatch scripts/ont/qc/chopper_trim_8026.sh
+# Long read QC postrim with NanoQC and LongQC
+sbatch scripts/ont/qc/nanoqc_postrim_8026.sh
+sbatch scripts/ont/qc/longqc_postrim_8026.sh
+# Remove unzipped reads from zipped directory. For some reason the batch job didn't
+# get permission to do it
+rm analyses/ont/reads/*.fastq
 
 # Hybrid assembly with Opera-MS

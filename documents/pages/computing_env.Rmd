@@ -20,6 +20,23 @@ conda install python=3
 pip install nanopack
 ```
 
+### NanoQC
+```{bash}
+mamba create -n nanoqc -c bioconda nanoqc
+```
+### LonQC
+```{bash}
+mamba create -n longqc -c bioconda h5py pysam edlib python-edlib
+mamba install pandas
+mamba install scipy
+mamba install matplotlib scikit-learn jinja2 h5py
+git clone https://github.com/yfukasawa/LongQC.git
+cd LongQC/minimap2-coverage && make
+cd ../../
+```
+
+
+
 ### OPERA-MS
 A hybrid metagenomic assembly that uses a short-reads first approach. I had to create a a conda environment which wraps the perl module dependencies required, but it worked.
 ```{bash opera-ms, eval=FALSE}
