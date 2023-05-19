@@ -11,15 +11,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Conda environments
 
-### Nanopack
-A collection of packages for for processing ONT data
-```{bash nanopack, eval=FALSE}
-conda create -n nanopack
-conda activate nanopack
-conda install python=3
-pip install nanopack
-```
-
 ### NanoQC
 ```{bash}
 mamba create -n nanoqc -c bioconda nanoqc
@@ -33,6 +24,10 @@ mamba install matplotlib scikit-learn jinja2 h5py
 git clone https://github.com/yfukasawa/LongQC.git
 cd LongQC/minimap2-coverage && make
 cd ../../
+```
+### Chopper
+```{bash}
+mamba create -n chopper -c bioconda -c conda-forge chopper
 ```
 
 
