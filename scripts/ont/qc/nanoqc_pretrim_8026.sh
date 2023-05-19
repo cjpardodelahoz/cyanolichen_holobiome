@@ -13,6 +13,7 @@ conda activate nanoqc
 # Variable with sample names
 sample=$(cat documents/sample_names/8026_sample_names.txt | sed -n ${SLURM_ARRAY_TASK_ID}p)
 # Directory for qc output
-mkdir -p analyses/ont/qc/${sample}
+mkdir -p analyses/ont/qc/${sample}/pretrim/nanoqc
 # Run nannoQC on each sample
-nanoQC -o analyses/ont/qc/${sample} analyses/ont/reads/${sample}.fastq.gz
+nanoQC -o analyses/ont/qc/${sample}/pretrim/nanoqc \
+ analyses/ont/reads/${sample}.fastq.gz

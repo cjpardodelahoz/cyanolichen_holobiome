@@ -15,10 +15,9 @@ longqc_path="/hpc/group/bio1/carlos/apps/LongQC"
 sample=$(cat documents/sample_names/8026_sample_names.txt | sed -n ${SLURM_ARRAY_TASK_ID}p)
 # unzip reads for longQC
 gunzip -c analyses/ont/reads/${sample}.fastq.gz > analyses/ont/reads/${sample}.fastq
-#
-rm -r analyses/ont/qc/${sample}/longqc
 # Run LongQC on each sample
-python ${longqc_path}/longQC.py sampleqc -o analyses/ont/qc/${sample}/longqc \
-  --preset ont-ligation -p 4 analyses/ont/reads/${sample}.fastq
+python ${longqc_path}/longQC.py sampleqc --preset ont-ligation \
+  -o analyses/ont/qc/${sample}/pretrim/longqc \
+  -p 4 analyses/ont/reads/${sample}.fastq
 # Remove unzipped reads
 rm analyses/ont/reads/${sample}.fastq
