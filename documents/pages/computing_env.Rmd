@@ -39,6 +39,7 @@ conda create -n OPERA-MS python=3.6
 conda activate OPERA-MS
 conda install -c bioconda perl-app-cpanminus
 conda install -c r r-base
+conda install pandas
 export PERL5LIB=/hpc/home/cjp47/miniconda3/envs/OPERA-MS/lib/5.26.2:$PERL5LIB
 git clone https://github.com/CSB5/OPERA-MS.git
 cd OPERA-MS
