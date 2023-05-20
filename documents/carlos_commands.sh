@@ -111,3 +111,9 @@ sbatch scripts/ont/qc/longqc_postrim_8026.sh
 rm analyses/ont/reads/*.fastq
 
 # Hybrid assembly with Opera-MS
+
+# Build database with Nostoc and Peltigera genomes for ref-based  species-level
+# contig clustering
+sbatch scripts/hybrid/build_operadb_peltnos.sh
+#
+sbatch scripts/hybrid/opera_spades.sh
