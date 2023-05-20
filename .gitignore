@@ -7,4 +7,5 @@ cyanolichen_holobiome.Rproj
 renv/
 logs/
 !renv/activate.R
+databases/
 
