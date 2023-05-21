@@ -49,6 +49,11 @@ make
 perl OPERA-MS.pl check-dependency
 ```
 
+### MEGAHIT ###
+```{bash}
+mamba create -n megahit -c bioconda megahit
+```
+
 ## Scripts
 
 ### spades_contig_graph.py

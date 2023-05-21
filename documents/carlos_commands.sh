@@ -47,6 +47,15 @@ sbatch scripts/n1_top_reads_tassignation_8066.sh
 # Convert spades assembly graph to fastg for Bandage 
 sbatch scripts/illumina/assemblies/spades_contigs_to_graph_8066_thalli.sh
 
+##### CO-ASSEMBLY OF FULL ENV METAGENOMES 8066 #####
+
+# Pool the env illumina reads 8066
+cat analyses/illumina/reads/*top*/*R1_paired.fq.gz > \
+  analyses/illumina/reads/env_pool/env_pool_8066_R1_paired.fq.gz
+cat analyses/illumina/reads/*top*/*R2_paired.fq.gz > \
+  analyses/illumina/reads/env_pool/env_pool_8066_R2_paired.fq.gz
+# Assemble pool reads with MEGAHIT
+sbatch scripts/illumina/coassembly/coassembly_8066_env_pool.sh
 
 ##### CO-ASSEMBLY OF NOSTOC READS FROM ENV METAGENOMES 8066 #####
 
@@ -57,7 +66,6 @@ sbatch scripts/illumina/assemblies/spades_contigs_to_graph_8066_thalli.sh
 # Generate assembly
 
 # Make directory for coaassemblies
-mkdir -p analyses/illumina/coassembly/full_library
 mkdir -p analyses/illumina/coassembly/nostoc_only
 # Make directories to store coassembly scripts and logs
 mkdir -p scripts/illumina/coassembly
