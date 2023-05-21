@@ -29,8 +29,10 @@ cd ../../
 ```{bash}
 mamba create -n chopper -c bioconda -c conda-forge chopper
 ```
-
-
+### Flye
+```{bash}
+mamba create -n flye -c bioconda
+```
 
 ### OPERA-MS
 A hybrid metagenomic assembly that uses a short-reads first approach. I had to create a a conda environment which wraps the perl module dependencies required, but it worked.

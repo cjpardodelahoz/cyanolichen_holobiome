@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##### Assembly of short read metagenomes #####
+
 # Generate file with sample ids from order 8066
 s8066=$(cd reads/illumina/Gallegos_8066_221012B6 && ls *.gz)
 for file in ${s8066} ; do
@@ -38,6 +40,12 @@ sh seed_reads_tassignation_8066.sh /hpc/group/bio1/cyanolichen_holobiome/analyse
 
 # Assignation of taxonomic identity to n1_top. This resulted a problematic sample for kraken by using the raw reads. I will use the trimmed reads to do the assignation
 sbatch scripts/n1_top_reads_tassignation_8066.sh
+
+
+###### GET NOSTOC GENOMES FROM SHORT READ METAGENOMES OF THALLI #####
+
+# Convert spades assembly graph to fastg for Bandage 
+
 
 ##### RNA READS #####
 
@@ -92,7 +100,7 @@ sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
 # Merge anvio profiles for manual binning
 sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
 
-##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
+##### LONG READ ERROR CORRECTION AND ASSEMBLY #####
 
 # Merge and rename nanopore reads with sample names
 sbatch scripts/ont/qc/merge_rename_ont_8026.sh
@@ -109,6 +117,13 @@ sbatch scripts/ont/qc/longqc_postrim_8026.sh
 # Remove unzipped reads from zipped directory. For some reason the batch job didn't
 # get permission to do it
 rm analyses/ont/reads/*.fastq
+#
+# Pool ONT reads
+cat analyses/ont/reads/*[1-3].fastq.gz > analyses/ont/reads/8026_pool.fastq.gz
+#
+sbatch scripts/ont/assembly/metaflye_assembly_8026_pool.sh
+
+##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
 
 # Hybrid assembly with Opera-MS
 
@@ -117,3 +132,4 @@ rm analyses/ont/reads/*.fastq
 sbatch scripts/hybrid/build_operadb_peltnos.sh
 #
 sbatch scripts/hybrid/opera_spades.sh
+sbatch scripts/hybrid/opera_spades_1.sh
