@@ -49,3 +49,11 @@ make
 perl OPERA-MS.pl check-dependency
 ```
 
+## Scripts
+
+### spades_contig_graph.py
+This is to get the contigs assembly graph for visualization in Bandage. It works with Python 2.7, which we used as a module from DCC, but can be installed in a conda environment. Clone the repo:
+```{bash}
+git clone https://github.com/rrwick/SPAdes-Contig-Graph.git
+```
+The run the `SPAdes-Contig-Grap/spades_contig_graph.py` script. Note that this tool is deprecated, but it still works if you have the right version of python, and it is useful.

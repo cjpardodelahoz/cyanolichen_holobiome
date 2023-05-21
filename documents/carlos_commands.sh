@@ -45,7 +45,7 @@ sbatch scripts/n1_top_reads_tassignation_8066.sh
 ###### GET NOSTOC GENOMES FROM SHORT READ METAGENOMES OF THALLI #####
 
 # Convert spades assembly graph to fastg for Bandage 
-
+sbatch scripts/illumina/assemblies/spades_contigs_to_graph_8066_thalli.sh
 
 ##### RNA READS #####
 
