@@ -47,25 +47,6 @@ sbatch scripts/n1_top_reads_tassignation_8066.sh
 # Convert spades assembly graph to fastg for Bandage 
 sbatch scripts/illumina/assemblies/spades_contigs_to_graph_8066_thalli.sh
 
-##### RNA READS #####
-
-# Generate file with sample ids from order 8117
-s8117=$(cd reads/rna/Carlos_8117_221128A7 && ls *.gz)
-for file in ${s8117} ; do
- echo ${file%_S*} >> scripts/s8117.txt
-done
-cat scripts/s8117.txt | sort | uniq > scripts/sample_ids_8117.txt
-# Merge and sort illumina reads from order 8117
-mkdir analyses/rna/reads
-sbatch scripts/merge_rna_reads_8117.sh
-# Run fastqc on Illumina raw reads from order 8117
-sbatch scripts/fastqc_illumina_raw_reads_8117.sh
-# Run fastqc on sample m2_top (index 18) after re merging the reads
-sbatch scripts/fastqc_illumina_raw_reads_8066_18.sh
-# Trim illumina reads with trimmomatic
-sbatch scripts/trim_illumina_reads_8066.sh
-# Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
-sbatch scripts/trim_illumina_reads_8066_18.sh
 
 ##### CO-ASSEMBLY OF NOSTOC READS FROM ENV METAGENOMES 8066 #####
 
@@ -133,3 +114,23 @@ sbatch scripts/hybrid/build_operadb_peltnos.sh
 #
 sbatch scripts/hybrid/opera_spades.sh
 sbatch scripts/hybrid/opera_spades_1.sh
+
+##### RNA READS #####
+
+# Generate file with sample ids from order 8117
+s8117=$(cd reads/rna/Carlos_8117_221128A7 && ls *.gz)
+for file in ${s8117} ; do
+ echo ${file%_S*} >> scripts/s8117.txt
+done
+cat scripts/s8117.txt | sort | uniq > scripts/sample_ids_8117.txt
+# Merge and sort illumina reads from order 8117
+mkdir analyses/rna/reads
+sbatch scripts/merge_rna_reads_8117.sh
+# Run fastqc on Illumina raw reads from order 8117
+sbatch scripts/fastqc_illumina_raw_reads_8117.sh
+# Run fastqc on sample m2_top (index 18) after re merging the reads
+sbatch scripts/fastqc_illumina_raw_reads_8066_18.sh
+# Trim illumina reads with trimmomatic
+sbatch scripts/trim_illumina_reads_8066.sh
+# Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
+sbatch scripts/trim_illumina_reads_8066_18.sh
