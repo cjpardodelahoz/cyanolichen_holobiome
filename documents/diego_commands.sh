@@ -49,5 +49,22 @@ ls analyses/illumina/busco/8066_env/ | while read line; do tax=$(ls analyses/ill
 # I will run the busco analysis to the eukaryotic 8066_thalli samples to try to obtain better results for the ascomycota MAGs
 scripts/seeds/seed_busco_content_prediction.sh euka_8066_thalli documents/illumina/8066_thalli/busco/eukaryota_busco_bins.txt yes busco analyses/illumina 8 geno yes /hpc/group/bio1/diego/programs/busco/busco_downloads/lineages/ascomycota_odb10 yes yes /hpc/group/bio1/diego/programs/busco/busco_downloads/lineages/ascomycota_odb10 /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_thalli/8066_thalli_bins .fna yes 8 busco logs/illumina/busco/euka_8066_thalli scripts/illumina/busco/euka_8066_thalli scavenger yes
 # Creation of a new seed script for metaeuk taxonomic assignation
-Running metaEuk in the eukaryotic bins from 8066_thalli
+# Running metaEuk in the eukaryotic bins from 8066_thalli
 sh scripts/seeds/seed_metaeuk_taxonomy.sh euk_8066_thalli documents/illumina/8066_thalli/busco/eukaryota_busco_bins.txt yes metaeuk analyses/illumina 12 /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/binning/vamb/8066_thalli/8066_thalli_bins .fna 2 /hpc/group/bio1/diego/programs/metaeuk/databases/uniref90_db/uniref90 0.7 2 3 yes yes 8 metaeuk logs/taxonomy/metaeuk/euk_8066_thalli scripts/taxonomy/metaeuk scavenger yes
+# Running the taxonomic assignation on the thalli samples to get the Nostoc and Lecanoromyetes reads
+sh scripts/seeds/seed_taxonomic_kraken_bracken.sh 8066_thalli /hpc/group/bio1/cyanolichen_holobiome/documents/sample_names/8066_thalli_sample_names.txt yes metag analyses/illumina 16 /hpc/group/bio1/cyanolichen_holobiome/analyses/illumina/reads _R1_all.fastq.gz _R2_all.fastq.gz /hpc/group/bio1/cyanolichen_holobiome/documents/names.dmp /hpc/group/bio1/diego/programs/kraken2/04152023 no no Nostoc Lecanoromycetes - yes 16 taxonomy_kraken logs/illumina/taxonomy/kraken scripts/illumina/taxonomy/kraken scavenger yes
+# Running the 8026 taxonomic assignation with kraken to the reads. I will use the seed_contig_taxonomic_kraken_bracken.sh
+sh scripts/seeds/seed_contig_taxonomy_kraken_bracken.sh 8026 /hpc/group/bio1/cyanolichen_holobiome/documents/sample_names/8026_sample_names.txt yes metag analyses/ont 16 /hpc/group/bio1/cyanolichen_holobiome/analyses/ont/reads _trimmed.fastq.gz /hpc/group/bio1/cyanolichen_holobiome/documents/names.dmp /hpc/group/bio1/diego/programs/kraken2/04152023 no yes Nostoc Lecanoromycetes - yes 16 kraken_bracken logs/ont/taxonomy/kraken scripts/ont/taxonomy scavenger yes
+# Creating a folder to allocate the results from the hybrid assemblies done with Unicycler
+mkdir -p analyses/ont/coassembly/unicycler/one_to_one
+mkdir -p analyses/ont/coassembly/unicycler/one_to_all_long_reads
+# Creating a folder to allocate the logs from the hybrid assemblies done with Unicycler
+mkdir -p logs/ont/coassembly/unicycler/one_to_one
+mkdir -p logs/ont/coassembly/unicycler/one_to_all_long_reads
+# Writting a new script to do the hybrid assembly with Unicycler
+nano scripts/ont/coassembly/nostoc_one_to_one_unicycler.sh
+# I will create a folder to allocate the concatenated Nostoc sequences from the long reads
+mkdir analyses/ont/taxonomy/sequences/concatenated
+touch analyses/ont/taxonomy/sequences/concatenated/long_reads_nostoc.fasta | ls analyses/ont/taxonomy/sequences/ | grep -v concatenated | while read line; do cat analyses/ont/taxonomy/sequences/${line}/${line}_Nostoc.fasta >> analyses/ont/taxonomy/sequences/concatenated/long_reads_nostoc.fasta ; done
+# I will run the hybrid assembly with Unicycler using all the long reads concatenated
+sbatch scripts/ont/coassembly/nostoc_one_to_all_unicycler.sh
