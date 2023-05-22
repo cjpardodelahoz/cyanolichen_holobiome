@@ -1,0 +1,64 @@
+---
+title: "Computing environment"
+author: "Carlos Pardo De la Hoz"
+date: "2023-05-18"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Conda environments
+
+### NanoQC
+```{bash}
+mamba create -n nanoqc -c bioconda nanoqc
+```
+### LonQC
+```{bash}
+mamba create -n longqc -c bioconda h5py pysam edlib python-edlib
+mamba install pandas
+mamba install scipy
+mamba install matplotlib scikit-learn jinja2 h5py
+git clone https://github.com/yfukasawa/LongQC.git
+cd LongQC/minimap2-coverage && make
+cd ../../
+```
+### Chopper
+```{bash}
+mamba create -n chopper -c bioconda -c conda-forge chopper
+```
+### Flye
+```{bash}
+mamba create -n flye -c bioconda
+```
+
+### OPERA-MS
+A hybrid metagenomic assembly that uses a short-reads first approach. I had to create a a conda environment which wraps the perl module dependencies required, but it worked.
+```{bash opera-ms, eval=FALSE}
+conda create -n OPERA-MS python=3.6
+conda activate OPERA-MS
+conda install -c bioconda perl-app-cpanminus
+conda install -c r r-base
+conda install pandas
+export PERL5LIB=/hpc/home/cjp47/miniconda3/envs/OPERA-MS/lib/5.26.2:$PERL5LIB
+git clone https://github.com/CSB5/OPERA-MS.git
+cd OPERA-MS
+make
+perl OPERA-MS.pl check-dependency
+```
+
+### MEGAHIT ###
+```{bash}
+mamba create -n megahit -c bioconda megahit
+```
+
+## Scripts
+
+### spades_contig_graph.py
+This is to get the contigs assembly graph for visualization in Bandage. It works with Python 2.7, which we used as a module from DCC, but can be installed in a conda environment. Clone the repo:
+```{bash}
+git clone https://github.com/rrwick/SPAdes-Contig-Graph.git
+```
+The run the `SPAdes-Contig-Grap/spades_contig_graph.py` script. Note that this tool is deprecated, but it still works if you have the right version of python, and it is useful.

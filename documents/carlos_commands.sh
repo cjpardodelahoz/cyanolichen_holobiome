@@ -1,5 +1,7 @@
 #!/bin/bash
 
+##### Assembly of short read metagenomes #####
+
 # Generate file with sample ids from order 8066
 s8066=$(cd reads/illumina/Gallegos_8066_221012B6 && ls *.gz)
 for file in ${s8066} ; do
@@ -39,6 +41,88 @@ sh seed_reads_tassignation_8066.sh /hpc/group/bio1/cyanolichen_holobiome/analyse
 # Assignation of taxonomic identity to n1_top. This resulted a problematic sample for kraken by using the raw reads. I will use the trimmed reads to do the assignation
 sbatch scripts/n1_top_reads_tassignation_8066.sh
 
+
+###### GET NOSTOC GENOMES FROM SHORT READ METAGENOMES OF THALLI #####
+
+# Convert spades assembly graph to fastg for Bandage 
+sbatch scripts/illumina/assemblies/spades_contigs_to_graph_8066_thalli.sh
+
+##### CO-ASSEMBLY OF FULL ENV METAGENOMES 8066 #####
+
+# Pool the env illumina reads 8066
+cat analyses/illumina/reads/*top*/*R1_paired.fq.gz > \
+  analyses/illumina/reads/env_pool/env_pool_8066_R1_paired.fq.gz
+cat analyses/illumina/reads/*top*/*R2_paired.fq.gz > \
+  analyses/illumina/reads/env_pool/env_pool_8066_R2_paired.fq.gz
+# Assemble pool reads with MEGAHIT
+sbatch scripts/illumina/coassembly/coassembly_8066_env_pool.sh
+
+##### CO-ASSEMBLY OF NOSTOC READS FROM ENV METAGENOMES 8066 #####
+
+# Diego extracted the nostoc reads from the environmental metagenomes.
+# They are currently in the work mirror directory under 
+# analyses/illumina/taxonomy/sequences
+
+# Generate assembly
+
+# Make directory for coaassemblies
+mkdir -p analyses/illumina/coassembly/nostoc_only
+# Make directories to store coassembly scripts and logs
+mkdir -p scripts/illumina/coassembly
+mkdir -p logs/illumina/coassembly
+# Merge, pool, and coassemble the extracted Nostoc reads
+sbatch scripts/illumina/coassembly/merge_and_trim_nostoc_8066_env.sh
+sbatch scripts/illumina/coassembly/coassembly_nostoc_8066_env.sh
+
+# Binning and curation with ANVIO
+
+# Create anvio contigs database
+sbatch scripts/illumina/coassembly/anvio_contigs_db_nostoc_8066_env.sh
+# Directory for mapped reads
+mkdir analyses/illumina/coassembly/nostoc_only/anvio/bams
+# Build assembly database
+sbatch scripts/illumina/coassembly/build_assembly_db_nostoc_8066_env.sh
+# Map corrected reads to assembly and generate indexed BAM file
+sbatch scripts/illumina/coassembly/map_index_nostoc_8066_env.sh
+# Generate anvio profiles with sample specific mapped reads
+sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
+# Merge anvio profiles for manual binning
+sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
+
+##### LONG READ ERROR CORRECTION AND ASSEMBLY #####
+
+# Merge and rename nanopore reads with sample names
+sbatch scripts/ont/qc/merge_rename_ont_8026.sh
+# File with 8026 sample names
+cat documents/sample_names/8026_sample_key.txt | cut -f 2 > documents/sample_names/8026_sample_names.txt
+# Long read QC pretrim with NanoQC and LongQC
+sbatch scripts/ont/qc/nanoqc_pretrim_8026.sh
+sbatch scripts/ont/qc/longqc_pretrim_8026.sh
+# Trim and filter reads
+sbatch scripts/ont/qc/chopper_trim_8026.sh
+# Long read QC postrim with NanoQC and LongQC
+sbatch scripts/ont/qc/nanoqc_postrim_8026.sh
+sbatch scripts/ont/qc/longqc_postrim_8026.sh
+# Remove unzipped reads from zipped directory. For some reason the batch job didn't
+# get permission to do it
+rm analyses/ont/reads/*.fastq
+#
+# Pool ONT reads
+cat analyses/ont/reads/*[1-3].fastq.gz > analyses/ont/reads/8026_pool.fastq.gz
+#
+sbatch scripts/ont/assembly/metaflye_assembly_8026_pool.sh
+
+##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
+
+# Hybrid assembly with Opera-MS
+
+# Build database with Nostoc and Peltigera genomes for ref-based  species-level
+# contig clustering
+sbatch scripts/hybrid/build_operadb_peltnos.sh
+#
+sbatch scripts/hybrid/opera_spades.sh
+sbatch scripts/hybrid/opera_spades_1.sh
+
 ##### RNA READS #####
 
 # Generate file with sample ids from order 8117
@@ -58,25 +142,3 @@ sbatch scripts/fastqc_illumina_raw_reads_8066_18.sh
 sbatch scripts/trim_illumina_reads_8066.sh
 # Trim illumina reads with trimmomatic on sample m2_top (index 18) after re merging the reads
 sbatch scripts/trim_illumina_reads_8066_18.sh
-
-##### CO-ASSEMBLY OF NOSTOC READS FROM ENV METAGENOMES 8066 #####
-
-# Diego extracted the nostoc reads from the environmental metagenomes.
-# They are currently in the work mirror directory under 
-# analyses/illumina/taxonomy/sequences
-
-# Make directory for coaassemblies
-mkdir -p analyses/illumina/coassembly/full_library
-mkdir -p analyses/illumina/coassembly/nostoc_only
-# Make directories to store coassembly scripts and logs
-mkdir -p scripts/illumina/coassembly
-mkdir -p logs/illumina/coassembly
-# Merge, pool, and coassemble the extracted Nostoc reads
-sbatch scripts/illumina/coassembly/merge_and_trim_nostoc_8066_env.sh
-sbatch scripts/illumina/coassembly/coassembly_nostoc_8066_env.sh
-
-
-
-
-
-

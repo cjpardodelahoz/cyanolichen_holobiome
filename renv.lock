@@ -558,6 +558,11 @@
         "Rcpp"
       ]
     },
+    "renv": {
+      "Package": "renv",
+      "Version": "0.17.3",
+      "Source": "Repository"
+    },
     "reshape2": {
       "Package": "reshape2",
       "Version": "1.4.4",
