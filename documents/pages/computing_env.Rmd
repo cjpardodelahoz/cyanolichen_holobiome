@@ -34,6 +34,12 @@ mamba create -n chopper -c bioconda -c conda-forge chopper
 mamba create -n flye -c bioconda
 ```
 
+### Medaka
+Read and assembly error correction tool for nanopore.
+```{bash}
+mamba create -n medaka -c bioconda -c conda-forge medaka=1.8.0
+```
+
 ### OPERA-MS
 A hybrid metagenomic assembly that uses a short-reads first approach. I had to create a a conda environment which wraps the perl module dependencies required, but it worked.
 ```{bash opera-ms, eval=FALSE}

@@ -103,6 +103,8 @@ anvi-interactive \
 
 ##### LONG READ ERROR CORRECTION AND ASSEMBLY #####
 
+# Pool of full libraries
+
 # Merge and rename nanopore reads with sample names
 sbatch scripts/ont/qc/merge_rename_ont_8026.sh
 # File with 8026 sample names
@@ -118,11 +120,25 @@ sbatch scripts/ont/qc/longqc_postrim_8026.sh
 # Remove unzipped reads from zipped directory. For some reason the batch job didn't
 # get permission to do it
 rm analyses/ont/reads/*.fastq
-#
+
 # Pool ONT reads
 cat analyses/ont/reads/*[1-3].fastq.gz > analyses/ont/reads/8026_pool.fastq.gz
-#
+# Coassemble long reads with metaFLYE
 sbatch scripts/ont/assembly/metaflye_assembly_8026_pool.sh
+
+# Pool of nostoc reads
+
+# Pool nostoc ONT reads
+mkdir -p analyses/ont/taxonomy/sequences/nostoc_pool
+cat analyses/ont/taxonomy/sequences/*[1-3]/*Nostoc.fq > \
+  analyses/ont/taxonomy/sequences/nostoc_pool/nostoc_8026_pool.fq
+# Coassembly pooled nostoc ONT reads with metaFLYE
+sbatch scripts/ont/assembly/metaflye_nostoc_8026_pool.sh
+# Correct with medaka
+sbatch scripts/ont/assembly/medaka_correction_nostoc_8026_pool.sh
+
+
+
 
 ##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
 
