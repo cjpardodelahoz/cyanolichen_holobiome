@@ -88,6 +88,18 @@ sbatch scripts/illumina/coassembly/map_index_nostoc_8066_env.sh
 sbatch scripts/illumina/coassembly/anvio_profile_nostoc_8066_env.sh
 # Merge anvio profiles for manual binning
 sbatch scripts/illumina/coassembly/merge_anvi_profiles_nostoc_8066_env.sh
+# Bin coassembly with concoct within anvio
+sbatch scripts/illumina/binning/anvio_concoct/concoct_binning_nostoc_8066_env.sh
+# Log into server using the ssh tunnel with port forwarding
+# See this post: https://merenlab.org/2018/03/07/working-with-remote-interative/
+# When logged in, set up the port and activate anvio
+export ANVIO_PORT=8090
+conda activate anvio-7.1
+# Check coassembly with anvio interactive
+anvi-interactive \
+ --profile-db analyses/illumina/coassembly/nostoc_only/anvio/merged_profile/PROFILE.db \
+ --contigs-db analyses/illumina/coassembly/nostoc_only/anvio/contigs.db
+
 
 ##### LONG READ ERROR CORRECTION AND ASSEMBLY #####
 
