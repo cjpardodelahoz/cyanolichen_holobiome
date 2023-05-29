@@ -1,0 +1,12 @@
+c1t_concatenated_contigs
+c2t_concatenated_contigs
+c3t_concatenated_contigs
+e1t_concatenated_contigs
+e2t_concatenated_contigs
+e3t_concatenated_contigs
+m1t_concatenated_contigs
+m2t_concatenated_contigs
+m3t_concatenated_contigs
+n1t_concatenated_contigs
+n2t_concatenated_contigs
+n3t_concatenated_contigs

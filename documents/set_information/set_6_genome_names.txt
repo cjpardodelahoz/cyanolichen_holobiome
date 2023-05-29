@@ -1,0 +1,7 @@
+e1_top_contigs
+e2_top_contigs
+e3_top_concatenated_contigs
+m1_top_contigs
+m3_top_concatenated_contigs
+n1_top_contigs
+n2_top_contigs
