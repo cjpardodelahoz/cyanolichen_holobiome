@@ -150,6 +150,11 @@ sbatch scripts/hybrid/opera_spades.sh
 sbatch scripts/hybrid/opera_spades_1.sh
 
 
+##### PHYLOGENETICS ####
+
+# Summarize BUSCO copy number on dirty env bins (set_7)
+Rscript scripts/phylogenetics/placement/busco_copy_summary_set_7.R
+
 ##### RNA READS #####
 
 # Generate file with sample ids from order 8117
