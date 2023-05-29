@@ -138,8 +138,6 @@ sbatch scripts/ont/assembly/metaflye_nostoc_8026_pool.sh
 sbatch scripts/ont/assembly/medaka_correction_nostoc_8026_pool.sh
 
 
-
-
 ##### HYBRID ASSEMBLY OF THALLI METAGENOMES #####
 
 # Hybrid assembly with Opera-MS
@@ -150,6 +148,7 @@ sbatch scripts/hybrid/build_operadb_peltnos.sh
 #
 sbatch scripts/hybrid/opera_spades.sh
 sbatch scripts/hybrid/opera_spades_1.sh
+
 
 ##### RNA READS #####
 
