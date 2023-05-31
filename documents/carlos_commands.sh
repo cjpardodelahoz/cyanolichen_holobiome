@@ -155,6 +155,15 @@ sbatch scripts/hybrid/opera_spades_1.sh
 # Summarize BUSCO copy number on dirty env bins (set_7)
 Rscript scripts/phylogenetics/placement/busco_copy_summary_set_7.R
 
+# Placement
+
+# Align and trim nostoc rbclx and 16S ref and query seqs
+sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement_align.sh
+sbatch scripts/phylogenetics/placement/nostoc_16s_placement_align.sh
+# EPA placement of rbcLX nostoc seqs
+sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement.sh
+sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement.sh
+
 ##### RNA READS #####
 
 # Generate file with sample ids from order 8117
