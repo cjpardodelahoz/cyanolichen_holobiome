@@ -155,7 +155,14 @@ sbatch scripts/hybrid/opera_spades_1.sh
 # Summarize BUSCO copy number on dirty env bins (set_7)
 Rscript scripts/phylogenetics/placement/busco_copy_summary_set_7.R
 
-# Placement
+# Genome placements
+
+# Get list of 26 BUSCO loci to use for placement of new genomes on Nostocales
+# phylogeny
+Rscript scripts/phylogenetics/placement/get_busco26_nostocales_odb10.R
+
+
+# Single locus placements
 
 # Align and trim nostoc rbclx and 16S ref and query seqs
 sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement_align.sh
