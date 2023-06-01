@@ -160,7 +160,8 @@ Rscript scripts/phylogenetics/placement/busco_copy_summary_set_7.R
 # Get list of 26 BUSCO loci to use for placement of new genomes on Nostocales
 # phylogeny
 Rscript scripts/phylogenetics/placement/get_busco26_nostocales_odb10.R
-
+# Add query (sets) busco26 seqs to ref alignments and trim gaps
+sbatch scripts/phylogenetics/placement/nostocales_busco26_align_to_ref.sh
 
 # Single locus placements
 
