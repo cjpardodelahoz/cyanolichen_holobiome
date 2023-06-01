@@ -330,7 +330,7 @@ if [ ${slurm} = "yes" ];
 			seq_end=${sign}(echo ${sign}line | cut -d' ' -f8); 
 			orientation_strand=${sign}(echo ${sign}line | cut -d' ' -f12);
 			evl=${sign}(echo ${sign}line | cut -d' ' -f13 );
-			x1=${sign}(echo ${sign}evl ${sign}thr | awk '{if (${sign}1 <= ${sign}2) print "1"; else print "0"}');
+			x1=${sign}(echo ${sign}evl ${sign}thr | awk '{if (${sign}1 < ${sign}2) print "1"; else print "0"}');
 
 
 			if [ "${sign}seq_end" -gt "${sign}seq_beg" ] # We will rearrenge the output
@@ -392,7 +392,7 @@ if [ ${slurm} = "yes" ];
 				seq_lenght=${sign}(echo ${sign}line | cut -d' ' -f6);
 				seqkit subseq ${query}/${sign}{count}${query_suff} -r ${sign}beg:${sign}endo --chr "${sign}hedr" -o ${sign}{sequences}/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta;
 				old_label=${sign}(grep '>' ${sign}{sequences}/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta | cut -d' ' -f1);
-				new_label=${sign}(echo '>'"${sign}{count}"_"${pref}"_"${sign}{i}");
+				new_label=${sign}(echo '>'"${pref}"_"${sign}{count}"_"${pref}"_"${sign}{i}");
 	        	sed -i "s/${sign}{old_label} .*/${sign}{new_label}/g" ${sign}{sequences}/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta;
 				# Concatenating the sequences
 				cat ${sign}sequences/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta >> ${sign}single_hits/${sign}{count}_${gene}_all_concatenated.fasta;
@@ -506,7 +506,7 @@ if [ ${slurm} = "yes" ];
 					seq_lenght=${sign}(echo ${sign}line | cut -d' ' -f7);
 					seqkit subseq ${query}/${sign}{count}${query_suff} -r ${sign}beg:${sign}endo --chr "${sign}hedr" -o ${sign}best_hits/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta;
 		        	old_label=${sign}(grep '>' ${sign}best_hits/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta | cut -d' ' -f1);
-					new_label=${sign}(echo '>'"${sign}{count}"_"${gene}"_"${sign}node");
+					new_label=${sign}(echo '>'"${pref}"_"${sign}{count}"_"${pref}"_"${sign}{i}");
 	        		sed -i "s/${sign}{old_label} .*/${sign}{new_label}/g" ${sign}best_hits/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta;
 					# Concatenating the sequences
 					cat ${sign}best_hits/"${sign}{count}"_"${gene}"_"${sign}node"_length_"${sign}seq_lenght".fasta >> ${sign}best_hits/${sign}{count}_${gene}_all_best_hits_concatenated.fasta;

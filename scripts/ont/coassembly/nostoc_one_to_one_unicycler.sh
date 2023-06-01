@@ -25,4 +25,4 @@ count=$(cat /hpc/group/bio1/cyanolichen_holobiome/documents/sample_names/8026_sa
 unicycler -1 analyses/illumina/taxonomy/sequences/${count}/${count}_Nostoc_1.fq -2 analyses/illumina/taxonomy/sequences/${count}/${count}_Nostoc_2.fq \
 -l analyses/ont/taxonomy/sequences/${count}/${count}_Nostoc.fasta -o analyses/ont/coassembly/one_to_one/${count} \
 --keep 2 -t 24 --mode normal \
---kmers 21,29,39,49,59,69,79,97 
+--kmers 21,29,39,49,59,69,79,97,105,119,127
