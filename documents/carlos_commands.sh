@@ -162,6 +162,12 @@ Rscript scripts/phylogenetics/placement/busco_copy_summary_set_7.R
 Rscript scripts/phylogenetics/placement/get_busco26_nostocales_odb10.R
 # Add query (sets) busco26 seqs to ref alignments and trim gaps
 sbatch scripts/phylogenetics/placement/nostocales_busco26_align_to_ref.sh
+# Concatenate busco26
+sbatch scripts/phylogenetics/placement/concatenate_busco26_nostocales.sh
+# Placement of nostocales 
+sbatch scripts/phylogenetics/placement/nostocales_busco26_placement.sh
+# Filter query genomes to nostoc s. str. only (set10)
+Rscript scripts/phylogenetics/placement/filter_busco26_nostocales_placements.R
 
 # Single locus placements
 
