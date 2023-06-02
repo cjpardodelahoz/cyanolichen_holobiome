@@ -169,6 +169,22 @@ sbatch scripts/phylogenetics/placement/nostocales_busco26_placement.sh
 # Filter query genomes to nostoc s. str. only (set10)
 Rscript scripts/phylogenetics/placement/filter_busco26_nostocales_placements.R
 
+# De novo Nostoc s. str. phylogeny with sets 2, 5, 6, 10, and 11
+
+# Align and trim busco1517
+sbatch scripts/phylogenetics/denovo/busco1517_align.sh
+# Get codon partition for nucleotide alignments
+sbatch scripts/phylogenetics/denovo/get_busco1517_codon_partitions.sh
+# Gene trees from busco1517
+sbatch scripts/phylogenetics/denovo/busco1517_ml_gene_trees.sh
+# ASTRAL for busco1517 with UFBoot <10 collapsed 
+sbatch scripts/phylogenetics/denovo/busco1517_astral.sh
+
+
+# Plot wASTRAL tree with lifestyle and source data (Fig 1?)
+
+
+
 # Single locus placements
 
 # Align and trim nostoc rbclx and 16S ref and query seqs
