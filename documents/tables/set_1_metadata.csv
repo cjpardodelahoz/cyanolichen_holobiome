@@ -1,0 +1,118 @@
+taxon_name,host_family,host_genus,substrate_type,lifestyle,country,locality,voucher,substrate_notes,reference,Taxonomy id,Source,BioProject,BioSample,Notes,Information_page
+Nmoss2,hylocomiaceae,pleurozium,terricolous,symbiotic,Sweden,"Ruttjeheden, Reivo forest, Northern Sweden (65?800N_19?100E)",NA,NA,Warshan et al. 2018,NA,JGI,NA,Gb0157307,,
+Nmoss3,hylocomiaceae,pleurozium,terricolous,symbiotic,Sweden,"Ruttjeheden, Reivo forest, Northern Sweden (65?800N_19?100E)",NA,NA,Warshan et al. 2018,NA,JGI,NA,Gb0157308,,
+Nmoss4,hylocomiaceae,pleurozium,terricolous,symbiotic,Sweden,"Ruttjeheden, Reivo forest, Northern Sweden (65?800N_19?100E)",NA,NA,Warshan et al. 2018,NA,JGI,NA,Gb0157304,,
+Nmoss5,hylocomiaceae,pleurozium,terricolous,symbiotic,Sweden,"Ruttjeheden, Reivo forest, Northern Sweden (65?800N_19?100E)",NA,NA,Warshan et al. 2018,1180,JGI,NA,Ga0080675,,
+Nmoss6,hylocomiaceae,pleurozium,terricolous,symbiotic,Sweden,"Ruttjeheden, Reivo forest, Northern Sweden (65?800N_19?100E)",NA,NA,Warshan et al. 2018,1180,JGI,NA,Ga0080674,,
+Nostoc_sp_CALU_996,NA,NA,terricolous,Free-living,Guinea,Central_Africa,NA,BG110,Warshan et al. 2017,442876,JGI,1089117,NA,,
+Nostoc_KVJ10,blasiaceae,blasia,terricolous,symbiotic,Norway,Kval¿ya island (69.64?N 18.73?E),NA,NA,Warshan et al. 2018,,,,,,
+Nostoc_KVJ2,blasiaceae,blasia,terricolous,symbiotic,Norway,Kval¿ya island (69.64?N 18.73?E),NA,NA,Warshan et al. 2018,,,,,,
+Nostoc_KVS11,blasiaceae,blasia,terricolous,symbiotic,Norway,Kval¿ya island (69.64?N 18.73?E),NA,NA,Warshan et al. 2018,,,,,,
+Nostoc_calcicola_FACHB_389,NA,NA,terricolous,Free-living,Netherlands,Utrecht,NA,Soil,Zhu et al. 2017,,,,,,
+Nostoc_commune_NIES_4072,NA,NA,NA,NA,NA,NA,NA,NA,Hirose et al. 2017. Unpublished,,,,,,
+Nostoc_flagelliforme_CCNUN1,NA,NA,terricolous,Free-living,China,"Sunitezuoqi, Inner Mongolia",NA,dry desert steppes and bare lands,Shang et al. 2019,,,,,,
+Nostoc_linckia_NIES_25,NA,NA,terricolous,Free-living,Japan,Kagoshima Kagoshima,NA,NA,Hirose et al. 2017. Unpublished,,,,,,
+Nostoc_linckia_z4,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,,,,,,
+Nostoc_punctiforme_PCC_73102,NA,NA,terricolous,symbiotic,Australia,NA,NA,Root section of Macrozamia sp.,Shih et al. 2013,,,,,,
+Nostoc_sp_ATCC_53789_v2,NA,NA,terricolous,NA,United Kingdom,"Scotland, Arron Island",NA,Lichen,Tabuxhi Yagui 2016. Unpublished,,,,,,
+Nostoc_sp_B_2019,NA,NA,terricolous,Free-living,Portugal,Old Cathedral of Coimbra,NA,limestone walls,Tiago et al. 2019 (unpublished),,,,,,
+Nostoc_sp_JC1668,zamiaceae,zamia,terricolous,symbiotic,Panama,"Omar Torrijos National Park, Provincia de Cocl_",NA,Zamia pseudoparasitica,Bell-Doyon et al. 2020,,,,,,
+Nostoc_sp_KVJ20,blasiaceae,blasia,terricolous,symbiotic,Norway,"Troms, Kvaloya island",NA,Blasia pusilla,Hals¿r et al. 2019,,,,,,
+Nostoc_sp_Lobaria_pulmonaria_5183,lobariaceae,lobaria,epiphytic,symbiotic,Canada,"British columbia, _Cedar Road, Vancouver Island",NA,Lobaria pulmonaria on _Acer macrophyllum trunk ,Gagunashvili and Andresson 2018,,,,,,
+Nostoc_sp_Peltigera_malacea_cyanobiont_DB3992,peltigeraceae,peltigera,terricolous,symbiotic,Canada,"Little Fort, British Co-",NA,NA,Xavier et al. 2012,,,,,,
+Nostoc_sp_Peltigera_membranacea_cyanobiont_210A,peltigeraceae,peltigera,terricolous,symbiotic,Iceland,"lumbia (51 37.50 N, 120 90 W",NA,NA,Gagunashvili and Andr_sson 2018,,,,,,
+Nostoc_sp_Peltigera_membranacea_cyanobiont_213,peltigeraceae,peltigera,terricolous,symbiotic,Iceland,"Keldur, Reykjavik",NA,NA,Gagunashvili and Andr_sson 2018,,,,,,
+Nostoc_sp_Peltigera_membranacea_cyanobiont_232,peltigeraceae,peltigera,terricolous,symbiotic,Iceland,"Keldur, Reykjavik",NA,NA,Gagunashvili and Andr_sson 2018,,,,,,
+Nostoc_sp_Peltigera_membranacea_cyanobiont_N6,peltigeraceae,peltigera,terricolous,symbiotic,Iceland,"Keldur, Reykjavik",NA,NA,Gagunashvili and Andr_sson 2018,,,,,,
+Nostoc_sphaeroides_CCNUC1,NA,NA,aquatic,Free-living,China,"Zouma, Hefeng County in Hubei Province",NA,Rice paddy field,Chen et al 2021,,,,,,
+Nostoc_sphaeroides_Kutzing,NA,NA,aquatic,Free-living,China,Enshi,NA,Water,Cheng et al. 2018. Unpublished,,,,,,
+Nostoc_sp_MBR_210,NA,NA,aquatic,aquatic,Singapore ,NA,NA,McBride Listeria agar,Harn Te et al. 2016,1881015,GenBank,PRJNA329640,SAMN05416363,,https://journals.asm.org/doi/10.1128/genomeA.01115-16
+Nostoc_punctiforme_NIES_2108,peltigeraceae,peltigera,terricolous,symbiotic,Japan,NA,NA,MDM agar,Inoue-Sakamoto et al. 2018,1356359,GenBank,PRJNA319602,SAMN04901527,,https://mcc.nies.go.jp/strainList.do?strainId=2500
+Nostoc_sp_ATCC_43529,NA,NA,aquatic,Free-living,United States,New Jersey,CPB 755,liquid_media,Flores et al. 1986,1840705,GenBank,PRJNA319597,SAMN04901515,,https://www.atcc.org/products/43529#product-references
+Nostoc_minutum_NIES_26,NA,NA,terricolous,Free-living,Taiwan,"Ishigaki (24.432862 ,124.205447)",NA,MDM agar,Tamre et al. 2022,1844469,GenBank,PRJNA319601,SAMN04901525,,https://mcc.nies.go.jp/strainList.do?strainId=173
+Nostoc_sp_UBA8866,NA,NA,NA,Free-living,NA,NA,NA,NA,Parks et al. 2018,2055761,GenBank,PRJNA417962,SAMN08019344,,https://www.ncbi.nlm.nih.gov/biosample/?term=txid2055761[organism:exp]
+Nostoc_commune_HK_02,NA,NA,terricolous,Free-living,Japan,"Himeji (34.928516 ,134.445362)",NA,BG-11,Katoh et al. 2012,1137087,GenBank,PRJDB5665,SAMD00079810,,https://www.ncbi.nlm.nih.gov/biosample/6928210
+Nostoc_sp_HK_01,NA,NA,terricolous,Free-living,Japan,"Himeji (35 ,134.5)",NA,BG-11,Katoh et al. 2012,196308,GenBank,PRJDB5665,SAMD00079807,,https://www.ncbi.nlm.nih.gov/biosample/?term=txid196308[Organism:noexp]
+Nostoc_sp_HG1,NA,NA,ice,Free-living,Antarctica,"Hughes Glacier (77.73,162.47)",NA,NA,Raymond et al. 2021,2593659,GenBank,PRJNA553075,SAMN12228832,Glacier,https://www.ncbi.nlm.nih.gov/biosample/?term=txid2593659[Organism:noexp]
+Nostoc_sp_C3_bin3,NA,NA,terricolous,Free-living,Australia,"Roxby Downs (30.4704,137.1363)",NA,NA,Jordan et al. 2020,2769069,GenBank,PRJNA647683,SAMN15929730,Dessert,https://www.ncbi.nlm.nih.gov/biosample/SAMN15929730
+Nostoc_sp_RI_552,NA,NA,aquatic,Free-living,New Zealand,"Raoul Island (29.26,177.92)",NA,NA,Stewart et al. submitted ,2654185,GenBank,PRJNA412936,SAMN12792760,Hot_spring,https://www.ncbi.nlm.nih.gov/biosample/SAMN12792760
+Nostoc_sp_GBBB01,NA,NA,aquatic,Free-living,Brazil,"Mranhao (7.1543,471500)",NA,BG-11,NA,2604138,GenBank,PRJNA560270,SAMN12574295,NA,https://www.ncbi.nlm.nih.gov/biosample/SAMN12574295
+Nostoc_sp_LPT,Collemataceae,Leptogium,terricolous,symbiotic,United States,"Durham (35.99,79.01)",NA,NA,Cornet et al 2021,2815387,GenBank,PRJNA256476,SAMN14531976,Bark,https://www.ncbi.nlm.nih.gov/biosample/SAMN14531976
+Nostoc_sp_TH1S01,NA,NA,terricolous,Free-living,Thailand,"(16.92,102.34)",NA,NA,Saha et al. 2021,442893,GenBank,PRJNA718890,SAMN18578404,Rice paddy,https://www.ncbi.nlm.nih.gov/biosample/SAMN18578404
+Nostoc_indistinguendum_CM1_VF10,NA,NA,terricolous,Free-living,United States,"California (35.635,115.5124)",NA,NA,Ward et al. 2021,287863,GenBank,PRJNA727914,SAMN19065575,soil near a gypsum mine,https://www.ncbi.nlm.nih.gov/biosample/?term=txid287863[Organism:noexp]
+Nostoc_desertorum_CM1_VF14,NA,NA,terricolous,Free-living,United States,"California (35.635,115.5124)",NA,NA,Ward et al. 2021,287862,GenBank,PRJNA727914,SAMN19065574,soil near a gypsum mine,https://www.ncbi.nlm.nih.gov/biosample/?term=txid287862[Organism:noexp]
+Nostoc_sp_CCCryo_231_06,NA,NA,ice,Free-living,Antarctica,Victoria Land,NA,BG-11,Liu et al. 2022,2825974,GenBank,PRJNA721463,SAMN18718595,Used in astrobiology,https://www.ncbi.nlm.nih.gov/biosample/SAMN18718595
+Nostoc_sp_unclutured,Collemataceae,Leptogium,terricolous,symbiotic,United States,"Nantahala National Forest (35.4072,-83.5931)",NA,NA,Pogoda et al. 2019,340711,GenBank,PRJEB51077,SAMEA14035940,,https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR13685151&display=metadata
+Nostoc_punctiforme_PCC_73102,zamiaceae,Macrozamia,terricolous,symbiotic,Australia,NA,NA,NA,NA,63737,RefSeq,PRJNA216,SAMN02598449,,https://www.atcc.org/products/29133
+Nostoc_sp_PCC_7107,NA,NA,aquatic,Free-living,NA,NA,NA,NA,Shin et al. 2021,317936,RefSeq,PRJNA158705,SAMN02261332,,https://gold.jgi.doe.gov/project?id=Gp0005626
+Nostoc_sp_PCC_7524,NA,NA,aquatic,Free-living,Sri Lanka,"(7.528,81357)",NA,NA,Shin et al. 2021,28072,RefSeq,PRJNA158707,SAMN02261333,,https://www.ncbi.nlm.nih.gov/biosample/SAMN02261333
+Nostoc_piscinale_CENA21,NA,NA,terricolous,Free-living,Brazil,"Solimoes River (2.75,65.25)",NA,BG-11,NA,224013,RefSeq,PRJNA288507,SAMN03796038,Wet sediments,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN03796038
+Nostoc_sp_NIES_3756,NA,NA,terricolous,Free-living,Japan,"Mimomi Park (35.684195,140.064770)",NA,BG-11,NA,1751286,RefSeq,PRJDB4341,SAMD00042755,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMD00042755
+Nostoc_sp_T09,zamiaceae,Dioon,terricolous,symbiotic,Mexico,Valle de Puebla,NA,NA,Gutiérrez-Garcia et al. 2019,1932621,RefSeq,PRJNA360300,SAMN06208854,,https://www.ncbi.nlm.nih.gov/biosample/SAMN06208854
+Nostoc_sp_106C,zamiaceae,Dioon,terricolous,symbiotic,Mexico,"Jiquipilas (16.655,923.39972)",NA,NA,Gutiérrez-Garcia et al. 2019,1932667,RefSeq,PRJNA360305,SAMN06208961,,https://www.ncbi.nlm.nih.gov/biosample/SAMN06208961
+Nostoc_sp_NIES_2111,NA,NA,terricolous,Free-living,Japan,"Kanazawa(36.545214,136.704093) ",NA,BG-11,Hirose Y et al. 2021,1973475,RefSeq,PRJDB5665,SAMD00079809,,https://mcc.nies.go.jp/strainList.do?strainId=2503&strainNumberEn=NIES-2111
+Nostoc_sp_NIES_4103,NA,NA,aquatic,Free-living,Japan,"Sawa (35.805996,140.470123)",NA,BG-11,Hirose Y et al. 2021,2005458,RefSeq,PRJDB5665,SAMD00081169,,https://mcc.nies.go.jp/strainList.do?strainId=4101&strainNumberEn=NIES-4103
+Nostoc_linckia_z18,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628752,RefSeq,PRJNA274736,SAMN03338913,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z2,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628741,RefSeq,PRJNA274736,SAMN03338898,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z1,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1612423,RefSeq,PRJNA274736,SAMN03338897,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z3,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628742,RefSeq,PRJNA274736,SAMN03338900,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z6,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628744,RefSeq,PRJNA274736,SAMN03338903,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z7,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628745,RefSeq,PRJNA274736,SAMN03338899,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z8,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628746,RefSeq,PRJNA274736,SAMN03338904,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z9,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628747,RefSeq,PRJNA274736,SAMN03338905,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z13,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628748,RefSeq,PRJNA274736,SAMN03338908,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_linckia_z14,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,1628749,RefSeq,PRJNA274736,SAMN03338909,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=274736
+Nostoc_sp_CENA543,NA,NA,aquatic,Free-living,Brazil,NA,NA,NA,NA,1869241,RefSeq,PRJNA401388,SAMN07604078,saline alkaline lake,https://www.ncbi.nlm.nih.gov/biosample/SAMN07604078
+Nostoc_cycadae_WK_1,zamiaceae,Cycas,terricolous,symbiotic,Japan,"Wakayama (34.2232,135.1721)",NA,BG-11,Kanesake et al. 2018,1861711,RefSeq,PRJDB4931,SAMD00053836,Cultivated for 46 years,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=427545
+Nostoc_sp_UIC_10630,NA,NA,terricolous,Free-living,United States,Dowrners Grove,NA,NA,May DS et al. 2020,2100146,RefSeq,PRJNA605020,SAMN14008317,,https://www.ncbi.nlm.nih.gov/biosample/SAMN14008317
+Nostoc_sp_TCL240_02,Leiosporocerotaceae,Leiosporoceros,terricolous,symbiotic,Panama,El Valle de Anton,NA,NA,Nelson et al. 2019,2572090,RefSeq,PRJNA534312,SAMN11484046,,https://www.ncbi.nlm.nih.gov/biosample/SAMN11484046
+Nostoc_sp_C052,blasiaceae,blasia,terricolous,symbiotic,United States,New York,NA,NA,Nelson et al. 2019,2576902,RefSeq,PRJNA534312,SAMN11587828,,https://www.ncbi.nlm.nih.gov/biosample/11587828
+Nostoc_sp_C057,blasiaceae,blasia,terricolous,symbiotic,United States,California,NA,NA,Nelson et al. 2019,2576903,RefSeq,PRJNA534312,SAMN11587924,,https://www.ncbi.nlm.nih.gov/biosample/11587924
+Nostoc_sp_TCL26_01,Leiosporocerotaceae,Leiosporoceros,terricolous,symbiotic,Panama,El Valle de Anton,NA,NA,Nelson et al. 2019,2576904,RefSeq,PRJNA534312,SAMN11588057,,https://www.ncbi.nlm.nih.gov/biosample/SAMN11484046
+Nostoc_edaphicum_CCNP1411,NA,NA,aquatic,Free-living,Poland,"Baltic Sea (54.336,18.36)",NA,Z8x,Mazur-Marzec et al. 2014,1472755,RefSeq,PRJNA638531,SAMN15196599,Seawater,https://www.ncbi.nlm.nih.gov/biosample?LinkName=bioproject_biosample_all&from_uid=638531
+Nostoc_sp_2RC,Salviniaceae,Azolla,aquatic,symbiotic,NA,NA,NA,Allen and Arnon (AA/8),Pratte et al. 2021,2485484,RefSeq,PRJNA591930,SAMN10347678,,https://img.jgi.doe.gov/cgi-bin/m/main.cgi?section=TaxonDetail&page=taxonDetail&taxon_oid=2909709548
+Nostoc_sp_UCD120,Salviniaceae,Azolla,aquatic,symbiotic,NA,NA,NA,Allen and Arnon (AA/8),Pratte et al. 2021,2681312,RefSeq,PRJNA591939,SAMN13392104,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13392104
+Nostoc_sp_UCD121,Salviniaceae,Azolla,aquatic,symbiotic,NA,NA,NA,Allen and Arnon (AA/8),Pratte et al. 2021,2681305,RefSeq,PRJNA591940,SAMN13392117,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13392117
+Nostoc_linckia_FACHB_104,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692905,RefSeq,PRJNA598298,SAMN13702741,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702741
+Nostoc_parmelioides_FACHB_3921,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692909,RefSeq,PRJNA598298,SAMN13702739,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702739/
+Nostoc_sp_FACHB_888,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692842,RefSeq,PRJNA598298,SAMN13702738,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702738
+Nostoc_sp_PCC_7120_FACHB_418,NA,NA,aquatic,Free-living,NA,NA,NA,Medium 1593,NA,103690,RefSeq,PRJNA492407,SAMN10102199,Cultivated for 41 years,https://www.dsmz.de/collection/catalogue/details/culture/DSM-107007
+Nostoc_sp_FACHB_190,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692838,RefSeq,PRJNA598298,SAMN13702728,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702728
+Nostoc_calcicola_FACHB_3891,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692842,RefSeq,PRJNA598298,SAMN13702738,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702707
+Nostoc_sp_FACHB_110,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692834,RefSeq,PRJNA598298,SAMN13702703,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702703
+Nostoc_sp_FACHB_145,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692836,RefSeq,PRJNA598298,SAMN13702701,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702701
+Nostoc_sp_FACHB_152,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692837,RefSeq,PRJNA598298,SAMN13702702,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702702
+Nostoc_sp_FACHB_87,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692841,RefSeq,PRJNA598298,SAMN13702700,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702700
+Nostoc_sp_FACHB_280,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692839,RefSeq,PRJNA598298,SAMN13702694,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702694
+Nostoc_sp_FACHB_133,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692835,RefSeq,PRJNA598298,SAMN13702690,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702690
+Nostoc_flagelliforme_FACHB_838,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692904,RefSeq,PRJNA598298,SAMN13702689,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702689
+Nostoc_sp_FACHB_973,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692844,RefSeq,PRJNA598298,SAMN13702688,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702688
+Nostoc_spongiaeforme_FACHB_130,NA,NA,NA,NA,China,NA,NA,NA,Chen et al 2021,1357510,RefSeq,PRJNA598298,SAMN13702670,,https://www.ncbi.nlm.nih.gov/biosample/?term=txid1357510[Organism:noexp]
+Nostoc_punctiforme_FACHB_252,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,1357509,RefSeq,PRJNA598298,SAMN13702669,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702669
+Nostoc_foliaceum_FACHB_393,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692915,RefSeq,PRJNA598298,SAMN13702668,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702668
+Nostoc_linckia_FACHB_391,NA,NA,NA,NA,China,NA,NA,NA,Chen et al 2021,2692906,RefSeq,PRJNA598298,SAMN13702667,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702667
+Nostoc_sp_FACHB_857,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692840,RefSeq,PRJNA598298,SAMN13702661,Thermal springs,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702661
+Nostoc_sp_FACHB_892,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692843,RefSeq,PRJNA598298,SAMN13702654,,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702654
+Nostoc_paludosum_FACHB_159,NA,NA,aquatic,Free-living,China,NA,NA,NA,Chen et al 2021,2692908,RefSeq,PRJNA598298,SAMN13702651,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13702651
+Nostoc_sp_MG11,NA,NA,terricolous,Free-living,Israel,NA,NA,NA,Zhou 2015. Unpublished,2721166,RefSeq,PRJNA615359,SAMN14452033,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN14452033
+Nostoc_sp_LEGE_12450,zamiaceae,Encephalartos,terricolous,symbiotic,Portugal,"Tropical Botanical Garden of Lisbon (38.69819,9.203429)",NA,BG-11,Eusebio et al. 2021,1828643,RefSeq,PRJNA667061,SAMN16351759,,https://lege.ciimar.up.pt/culture/nostoc-sp-lege-12450/
+Nostoc_sp_LEGE_12447,zamiaceae,Cycas,terricolous,symbiotic,Portugal,"Tropical Botanical Garden of Lisbon (38.69819,9.203429)",NA,BG-11,Eusebio et al. 2021,1828640,RefSeq,PRJNA667061,SAMN16351758,,https://lege.ciimar.up.pt/culture/nostoc-sp-lege-12447/
+Nostoc_cf_edaphicum_LEGE_07299,NA,NA,aquatic,Free-living,Portugal,"Minho estuary (41.90181,8.813139)",NA,Z8,Eusebio et al. 2021,2777974,RefSeq,PRJNA667061,SAMN16351744,Estuary shore,https://lege.ciimar.up.pt/culture/nostoc-cf-edaphicum-lege-07299/
+Nostoc_sp_LEGE_06077,NA,NA,aquatic,Free-living,Portugal,"Minho estuary (41.88797,8.825722)",NA,BG-11,Eusebio et al. 2021,915325,RefSeq,PRJNA667061,SAMN16351721,Estuary shore,https://lege.ciimar.up.pt/culture/nostoc-sp-lege-06077/
+Nostoc_sp_NZL,NA,NA,aquatic,Free-living,New Zealand,Lake Okaro,NA,NA,https://gold.jgi.doe.gov/studies?id=Gs0152201,2650612,RefSeq,PRJNA573962,SAMN12837463,temperate lake,https://www.ncbi.nlm.nih.gov/biosample/12837463
+Nostoc_sp_WHI,NA,NA,aquatic,Free-living,Canada,"Nunavut (83.5,74.10)",NA,NA,https://gold.jgi.doe.gov/studies?id=Gs0152201,2650611,RefSeq,PRJNA573962,SAMN12837462,shallow ephemeral pool,https://www.ncbi.nlm.nih.gov/biosample/12837462
+Nostoc_commune_BAE,NA,NA,aquatic,Free-living,Canada,"Nunavut (82.26,61.25)",NA,NA,https://gold.jgi.doe.gov/studies?id=Gs0152201,2650610,RefSeq,PRJNA573962,SAMN12837461,herbarium sample,https://www.ncbi.nlm.nih.gov/biosample/12837461
+Nostoc_sp_UHCC_0702,NA,NA,aquatic,Free-living,Finland,"Villahteen Kukkanen (60.955389,25.884)",NA,Z8,Heinilä et al. 2021,2814655,RefSeq,PRJNA704553,SAMN18043900,https://pubs.rsc.org/en/content/articlelanding/2021/ob/d1ob00772f,https://kotka.luomus.fi/view?uri=http://tun.fi/RAV.739&page=1&spot=1
+Nostoc_sp_MS1,NA,NA,aquatic,Free-living,Japan,"Hokota River (36.08381,140.30465)",NA,NA,NA,2764711,RefSeq,PRJDB10449,SAMD00242822,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMD00242822
+Nostoc_sp_CHAB_5836,NA,NA,terricolous,Free-living,China,Henan,NA,NA,Huo D et al. 2021,2780404,RefSeq,PRJNA668662,SAMN16418217,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN16418217
+Nostoc_sphaeroides_CHAB_2801,NA,NA,terricolous,Free-living,China,Hubei,NA,NA,Huo D et al. 2021,2780406,RefSeq,PRJNA668662,SAMN16418221,,https://www.ncbi.nlm.nih.gov/biosample?LinkName=assembly_biosample&from_uid=11421541
+Nostoc_favosum_CHAB5714,NA,NA,terricolous,Free-living,China,Jilin,NA,NA,Huo D et al. 2021,2780399,RefSeq,PRJNA668662,SAMN16418212,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN16418212
+Nostoc_sp_XA010,NA,NA,terricolous,Free-living,China,Xinjiang,NA,NA,Huo D et al. 2021,2780407,RefSeq,PRJNA668662,SAMN16418219,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN16418219
+Nostoc_mirabile_CHAB5784,NA,NA,terricolous,Free-living,China,Hubei,NA,NA,Huo D et al. 2021,2780401,RefSeq,PRJNA668662,SAMN16418214,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN16418214
+Nostoc_sp_CHAB_5715,NA,NA,terricolous,Free-living,China,Hrilongjiang,NA,NA,Huo D et al. 2021,2780400,RefSeq,PRJNA668662,SAMN16418213,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN16418213
+Nostoc_sp_CMAA1605,NA,NA,terricolous,Free-living,Brazil,"Itacoatiara (3.08,58.31)",NA,NA,NA,2055159,RefSeq,PRJNA419303,SAMN08049055,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN08049055
+Nostoc_sp_UHCC_0870,NA,NA,aquatic,Free-living,Finland,"Varlaxudden (60.26250000,25.64305556)",NA,Z8,Heinilä et al. 2021,2914041,RefSeq,PRJNA802184,SAMN25514200,brackish water,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN25514200
+Nostoc_cf_commune_SO_36,NA,NA,terricolous,Free-living,Antarctica,"Lutzow-Holm Bay (69.36,38.20)",NA,BG-11,Chintalapati et al. 2006,449208,RefSeq,PRJDB12904,SAMD00439332,area of moss-dominated vegetation,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMD00439332
+Nostoc_sp_KVJ3,blasiaceae,blasia,terricolous,symbiotic,Norway,"Troms (69.64,18.73)",NA,Z8,Teikari e al. 2018,457945,RefSeq,PRJNA388731,SAMN13066476,,https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN13066476
+Nostoc_sp_UHCC_0926,lichen,lichen,terricolous,symbiotic,Finland,,NA,NA,Zoe May 2020 unpublished,3025190,RefSeq,PRJNA930330,SAMN33005007,,https://helda.helsinki.fi/handle/10138/315887
+Nostoc_sp_FACHB_87,NA,NA,terricolous,Free-living,China,NA,NA,NA,Chen et al 2021,2692841,RefSeq,PRJNA598298,SAMN13702700,https://www.ncbi.nlm.nih.gov/biosample/SAMN13702700,

@@ -1,0 +1,209 @@
+sample_id	taxon_name	host_family	host_genus	radiation	substrate_type	lifestyle	country	locality	voucher	accession	reference	substrate_notes
+3	Peltigera_ponojensis_monticola_9	peltigeraceae	peltigera	no	terricolous	symbiotic					This study	
+8274	Peltigera_scabrosa_2	peltigeraceae	peltigera	no	terricolous	symbiotic					This study	
+8277	Peltigera_aubertii	peltigeraceae	peltigera	no	terricolous	symbiotic	Chile				This study	
+Aphanizomenon_flos_aquae_NIES_81	Aphanizomenon_flos_aquae_NIES_81	NA	NA	no	aquatic	Free-living	Japan	Lake Kasumiguara	NA	NZ_AZYY00000000.1 	Cao et al. 2014	Fresh water
+Anabaena_cylindrica_PCC_7122	Anabaena_cylindrica_PCC_7122	NA	NA	no	aquatic	Free-living	United Kingdom	Cambridge	NA	NC_019771.1	Shih et al. 2013	
+Cylindrospermum_stagnale_PCC_7417	Cylindrospermum_stagnale_PCC_7417	NA	NA	no	terricolous	Free-living	Sweden	Stockholm	NA	NC_019757.1	Shih et al. 2013	Soil in greenhouse
+JL23	Peltigera_aphthosa_JL23	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Alberta	NA		Cornet et al. 2021	
+JL31	Peltigera_extenuata_JL31	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Alberta	NA		Cornet et al. 2021	
+JL33	Peltigera_malacea_JL33	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Alberta	NA		Cornet et al. 2021	
+JL34	Peltigera_evansiana_JL34	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	Michigan	NA		Cornet et al. 2021	
+Nmoss2	Pleurozium_schreberi_Nmoss2	hylocomiaceae	pleurozium	no	terricolous	symbiotic	Sweden	"Ruttjeheden, Reivo forest, Northern Sweden (65?800N–19?100E)"	NA	JGI 1042295	Warshan et al. 2018	
+Nmoss3	Pleurozium_schreberi_Nmoss3	hylocomiaceae	pleurozium	no	terricolous	symbiotic	Sweden	"Ruttjeheden, Reivo forest, Northern Sweden (65?800N–19?100E)"	NA	JGI 1042307	Warshan et al. 2018	
+Nmoss4	Pleurozium_schreberi_Nmoss4	hylocomiaceae	pleurozium	no	terricolous	symbiotic	Sweden	"Ruttjeheden, Reivo forest, Northern Sweden (65?800N–19?100E)"	NA	NA	Warshan et al. 2018	
+NMS1	Peltigera_hydrothyria_NMS1	peltigeraceae	peltigera	no	aquatic	symbiotic	Canada	Nova Scotia	NA		Cornet et al. 2021	
+NMS2	Peltigera_hydrothyria_NMS2	peltigeraceae	peltigera	no	aquatic	symbiotic	Canada	Nova Scotia	NA		Cornet et al. 2021	
+NMS4	Peltigera_venosa_NMS4	peltigeraceae	peltigera	no	terricolous	symbiotic	Finland		NA		Cornet et al. 2021	
+NMS7	Solorina_crocea_NMS7	peltigeraceae	solorina	no	terricolous	symbiotic	Finland		NA		Cornet et al. 2021	
+NMS8	Peltigera_dolichorhiza_NMS8	peltigeraceae	peltigera	no	terricolous	symbiotic	Panama		NA		Cornet et al. 2021	
+NMS9	Peltigera_phyllidiosa_NMS9	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	North Carolina	NA		Cornet et al. 2021	
+NOS	Peltigera_aphthosa_NOS	peltigeraceae	peltigera	no	terricolous	symbiotic	Sweden		NA		Cornet et al. 2021	
+Nostoc_calcicola_FACHB_389	Nostoc_calcicola_FACHB389	NA	NA	no	terricolous	Free-living	Netherlands	Utrecht	NA	NZ_MRBZ01000000	Zhu et al. 2017	Soil
+Nostoc_commune_NIES_4072	Nostoc_commune_NIES_4072	NA	NA	no	NA	NA	NA		NA	NZ_BDUD01000000	Hirose et al. 2017. Unpublished	
+Nostoc_flagelliforme_CCNUN1	Nostoc_flagelliforme_CCNUN1	NA	NA	no	terricolous	Free-living	China	"Sunitezuoqi, Inner Mongolia"	NA	NZ_CP024785.1	Shang et al. 2019	dry desert steppes and bare lands
+Nostoc_KVJ10	Blasia_pusilla_KVJ10	blasiaceae	blasia	no	terricolous	symbiotic	Norway	Kvaløya island (69.64?N 18.73?E)	NA	NA	Warshan et al. 2018	
+Nostoc_KVJ2	Blasia_pusilla_KVJ2	blasiaceae	blasia	no	terricolous	symbiotic	Norway	Kvaløya island (69.64?N 18.73?E)	NA	NA	Warshan et al. 2018	
+Nostoc_KVS11	Blasia_pusilla_KVS11	blasiaceae	blasia	no	terricolous	symbiotic	Norway	Kvaløya island (69.64?N 18.73?E)	NA	NA	Warshan et al. 2018	
+Nostoc_linckia_NIES_25	Nostoc_linckia_NIES_25	NA	NA	no	terricolous	Free-living	Japan	Kagoshima Kagoshima	NA	NZ_AP018222	Hirose et al. 2017. Unpublished	
+Nostoc_linckia_z4	Nostoc_linckia_z4	NA	NA	no	terricolous	Free-living	Israel		NA	NZ_LAHA01000000	Zhou 2015. Unpublished	
+Nostoc_punctiforme_PCC_73102	Nostoc_punctiforme_PCC_73102	NA	NA	no	terricolous	symbiotic	Australia		NA	NC_010628.1	Shih et al. 2013	Root section of Macrozamia sp.
+Nostoc_sp_ATCC_53789_v2	Nostoc_sp_ATCC_53789_v2	NA	NA	no	terricolous	NA	United Kingdom	"Scotland, Arron Island"	NA	NZ_LWSY01000000	Tabuxhi Yagui 2016. Unpublished	Lichen
+Nostoc_sp_B_2019	Nostoc_sp_B_2019	NA	NA	no	terricolous	Free-living	Portugal	Old Cathedral of Coimbra	NA	NZ_WVID01000000	Tiago et al. 2019 (unpublished)	limestone walls
+Nostoc_sp_JC1668	Zamia_pseudoparasitica_JC1668	zamiaceae	zamia	no	terricolous	symbiotic	Panama	"Omar Torrijos National Park, Provincia de Coclé"	NA	NZ_SZNH01000000	Bell-Doyon et al. 2020	Zamia pseudoparasitica
+Nostoc_sp_KVJ20	Blasia_pusilla_KVJ20	blasiaceae	blasia	no	terricolous	symbiotic	Norway	"Troms, Kvaloya island"	NA	NZ_LSSA01000000	Halsør et al. 2019	Blasia pusilla
+Nostoc_sp_Lobaria_pulmonaria_5183	Lobaria_pulmonaria_5183	lobariaceae	lobaria	no	epiphytic	symbiotic	Canada	"British columbia, _Cedar Road, Vancouver Island"	NA	NZ_CP026692.1	Gagunashvili and Andresson 2018	Lobaria pulmonaria on _Acer macrophyllum trunk 
+Nostoc_sp_Peltigera_malacea_cyanobiont_DB3992	Peltigera_malacea_cyanobiont_DB3992	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	"Little Fort, British Co-"	NA		Xavier et al. 2012	
+Nostoc_sp_Peltigera_membranacea_cyanobiont_210A	Peltigera_membranacea_cyanobiont_210A	peltigeraceae	peltigera	no	terricolous	symbiotic	Iceland	"lumbia (51 37.50 N, 120 90 W"	NA		Gagunashvili and Andrésson 2018	
+Nostoc_sp_Peltigera_membranacea_cyanobiont_213	Peltigera_membranacea_cyanobiont_213	peltigeraceae	peltigera	no	terricolous	symbiotic	Iceland	"Keldur, Reykjavik"	NA		Gagunashvili and Andrésson 2018	
+Nostoc_sp_Peltigera_membranacea_cyanobiont_232	Peltigera_membranacea_cyanobiont_232	peltigeraceae	peltigera	no	terricolous	symbiotic	Iceland	"Keldur, Reykjavik"	NA		Gagunashvili and Andrésson 2018	
+Nostoc_sp_Peltigera_membranacea_cyanobiont_N6	Peltigera_membranacea_cyanobiont_N6	peltigeraceae	peltigera	no	terricolous	symbiotic	Iceland	"Keldur, Reykjavik"	NA		Gagunashvili and Andrésson 2018	
+Nostoc_sp_UIC_10630	Nostoc_sp_UIC_10630	NA	NA	no	terricolous	Free-living	United States of America	"Downers Grove, Illinois"	NA	NZ_JAAGOG010000000	May et al. 2020	Soil
+Nostoc_sphaeroides_CCNUC1	Nostoc_sphaeroides_CCNUC1	NA	NA	no	aquatic	Free-living	China	"Zouma, Hefeng County in Hubei Province"	NA	NZ_CP045226	Chen et al 2021	Rice paddy field
+Nostoc_sphaeroides_Kutzing	Nostoc_sphaeroides_Kutzing	NA	NA	no	aquatic	Free-living	China	Enshi	NA	NZ_CP031941	Cheng et al. 2018. Unpublished	Water
+P10073	Nephroma_resupinatum	nephromataceae	nephroma	yes		symbiotic	Canada	ABMI 875	ABMI ID 241800		This study	log/stump
+P10160	Peltigera_aphthosa_5	peltigeraceae	peltigera	no		symbiotic	Canada	ABMI 963	ABMI ID 288992		This study	Tree/Other
+P10246	Protopannaria_pezizoides	pannariaceae	protopannaria	no		symbiotic	Canada	ABMI 1425	ABMI ID 1269260		This study	log/stump
+P10247	Leptogium	collemataceae	leptogium	no	terricolous	symbiotic	Canada	ABMI 1447	ABMI 1263667		This study	upland
+P10264	Leptogium_saturninum	collemataceae	leptogium	yes	epiphytic	symbiotic	Canada	ABMI 930	ABMI 1521014		This study	Tree/Other
+P1030	Peltigera_retifoveata	peltigeraceae	peltigera	no	terricolous	symbiotic	Norway		Magain s.n. (LG)		This study	
+P10324	Peltigera_britannica_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1232	ABMI ID 295052		This study	log/stump
+P10894	Peltigera_malacea_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 292	ABMI ID 374039		This study	Wetland
+P11060	Leptogium_saturninum	collemataceae	leptogium	no		symbiotic	Canada	ABMI 1510	ABMI 682872		This study	Tree/Other
+P11388	Peltigera_neckeri	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 746 	ABMI ID 500616		This study	log/stump
+P11425	Peltigera_aff_neorufescens	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1408	ABMI ID 3611		This study	upland
+P1229	Peltigera_hymenina	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	Oregon	B. McCune 30448; McCune Private Coll.		This study; Magain et al. 2017	
+P12502	Pseudocyphellaria havaiiensis	lobariaceae	pseudocyphellaria	yes	epiphytic	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-3-C2-P1	Malaysia;Kinabalu Park;Jolanta Miadlikowska;DUKE		This study	
+P12521	Lobaria_sp	lobariaceae	lobaria	yes	epiphytic	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-3-C1-P1	Malaysia;Kinabalu Park;Jolanta Miadlikowska;none		This study	
+P12523	Pseudocyphellaria_sp	lobariaceae	pseudocyphellaria	yes	epiphytic	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-1-C2-P1	Malaysia;Kinabalu Park;Nicolas Magain;DUKE		This study	
+P12537	Pseudocyphellaria_sp	lobariaceae	pseudocyphellaria	no	epiphytic	symbiotic	Malaysia	Golife Malaysia-Kinabalu-3-C2-P1	Malaysia;Crocker Range Park;DUKE		This study	
+P12545	Pannaria_rubiginosa	pannariaceae	pannaria	yes	epiphytic	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-2-C1-P1	Malaysia;Kinabalu Park;Jolanta Miadlikowska;none		This study	
+P12559	Pseudocyphellaria_guillemini	lobariaceae	pseudocyphellaria	yes	epiphytic	symbiotic	Chile	GoLife Chile-Mocho-1-C1-P1	Chile;Reserva Nacional Mocho-Choshuenco;Lutzoni et al.;None		This study	
+P12560	Pseudocyphellaria_berberina	lobariaceae	pseudocyphellaria	no	epiphytic	symbiotic	Chile	GoLife Chile-Puyehue-1-C2-P1	Chile;Parque Nacional Puyehue;Lutzoni et al.;None		This study	
+P12564	Pseudocyphellaria_corifolia	lobariaceae	pseudocyphellaria	yes	epiphytic	symbiotic	Chile	GoLife Chile-Malalca-1-C2-P1	"Chile;Reserva Nacional Malalcahuello;Lutzoni et al.;AZ, Chile"		This study	epiphytic/at the base of Araucaria
+P12567	Sticta_hypochra	lobariaceae	sticta	no	epiphytic	symbiotic	Chile	GoLife Chile-Mocho-1-C1-P1	Chile;Reserva Nacional Mocho-Choshuenco;Lutzoni et al.;Chile		This study	
+P12569	Sticta_caulescens	lobariaceae	sticta	no	terricolous	symbiotic	Chile	GoLife Chile-Crater-2-C1-P1	Chile;Parque Nacional Puyehue;Lutzoni et al.;Chile		This study	
+P12570	Sticta_hypochra	lobariaceae	sticta	no	terricolous	symbiotic	Chile	GoLife Chile-Mocho-2-C2-P1	Chile;Reserva Nacional Mocho-Choshuenco;Lutzoni et al.;Chile		This study	
+P12573	Nephroma_antarcticum	nephromataceae	nephroma	yes	epiphytic	symbiotic	Chile	GoLife Chile-Mocho-1-C1-P1	Chile;Reserva Nacional Mocho-Choshuenco;Lutzoni et al.;AZ		This study	
+P12578	Gabura fascicularis	arctomiaceae	Gabura	no	terricolous	symbiotic	Chile	GoLife Chile-Angol-1-C1-P1	Chile;Parque Nacional Nahuelbuta;Lutzoni et al.;Chile		This study	epiphytic/at the base of Araucaria
+P12584	Pseudocyphellaria_meyenii	lobariaceae	pseudocyphellaria	no	epiphytic	symbiotic	Chile	GoLife Chile-Puyehue-1-C1-P1	"Chile;Parque Nacional Puyehue;Lutzoni et al.;AZ, Chile"		This study	
+P12588	Leptogium_sp	collemataceae	leptogium	no	terricolous	symbiotic	Chile	GoLife Chile-Angol-1-C1-P1	"Chile;Parque Nacional Nahuelbuta;Lutzoni et al.;AZ, Chile"		This study	terricolous/on moss on a boulder
+P12591	Collema_sp	collemataceae	collema	no	epiphytic	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-1-C1-P1	Malaysia;Kinabalu Park		This study	
+P12639	Leptogium_sp	collemataceae	leptogium	no	epiphytic	symbiotic	panama	GoLife Panama-Swampo-1-C1-P1	Panama;Parque Nacional Isla Bastimentos;Nicolas Magain;Panama		This study	
+P12641	Leptogium_sp	collemataceae	leptogium	no	terricolous	symbiotic	Panama	GoLife Panama-Parida-1-C1-P1	Panama;Parque Nacional Golfo de Chiriqui;Nicolas Magain;Panama		This study	terricolous/on moss on a boulder
+P12642	Leptogium_sp	collemataceae	leptogium	no	epiphytic	symbiotic	Panama	GoLife Panama-Gamboa-2-C1-P1	Panama;Parque Nacional Soberania;Nicolas Magain;Panama		This study	
+P12646	Leptogium_sp	collemataceae	leptogium	no	epiphytic	symbiotic	Panama	GoLife Panama-Baru-1-C5-P1	Panama;Parque Nacional Volcan Baru;Nicolas Magain;Panama		This study	
+P12649	Leptogium_sp	collemataceae	leptogium	no	terricolous	symbiotic	Panama	GoLife Panama-Copete-1-C1-P1	Panama;Parque Nacional Volcan Baru;Lutzoni et al.;Panama		This study	
+P12650	Leptogium_sp	collemataceae	leptogium	no	epiphytic	symbiotic	Panama	GoLife Panama-Swampo-1-C1-P1	Panama;Parque Nacional Isla Bastimentos;Nicolas Magain;Panama		This study	
+P14213	Lobaria_sp.	lobariaceae	lobaria	yes	epiphytic	symbiotic	South Africa	GoLife SouthAfrica-Buffelskloof-1-P1-C2	South Africa;Buffelskloof;Jolanta Miadlikowska		This study	terricolous/on moss on a log
+P14264	Pseudocyphellaria sp.	lobariaceae	pseudocyphellaria	yes	epiphytic	symbiotic	South Africa	GoLife SouthAfrica-Salt River-1-P1-C1	South Africa;Salt River;GoLife		This study	
+P14269	Sticta sp.	lobariaceae	sticta	yes	terricolous	symbiotic	South Africa	GoLife SouthAfrica-Buffelskloof-7-P1-C3	South Africa;Buffelskloof;GoLife		This study	terricolous/on a rock with little mosses
+P14318	Sticta_sp	lobariaceae	sticta	yes	terricolous	symbiotic	South Africa	GoLife SouthAfrica-Table-1-P1-C1	South Africa;Table;GoLife		This study	terricolous/on a rock with little mosses
+P14321	Pseudocyphellaria_sp	lobariaceae	pseudocyphellaria	no	terricolous	symbiotic	South Africa	GoLife SouthAfrica-Table-1-P1-C1	South Africa;Table;GoLife		This study	terricolous/on a rock with little mosses
+P1574	Peltigera_dolichorhiza	peltigeraceae	peltigera	no	terricolous	symbiotic	Brazil	Minas gerais	J. Miadlikowska et al. s.n.; CGMS-34450		This study; Magain et al. 2017	
+P2037	Peltigera_aubertii	peltigeraceae	peltigera	no	terricolous	symbiotic	Chile	Region XII	Goffinet 10559 (CONN)		This study; Magain et al. 2018	
+P2039	Peltigera_sp_14	peltigeraceae	peltigera	no	terricolous	symbiotic	Chile	Region XII	Shaw 17848 (DUKE 0401861)		This study; Magain et al. 2018	
+P2081	Peltigera_canina_2	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	North Carolina	Hollinger 2731 (UBC)		This study; Magain et al. 2018	
+P2083	Peltigera_rufescens_1	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	North Carolina	"NC, Hollinger 2711 (UBC)"		This study; Magain et al. 2018	
+P2090	Peltigera_canina_2	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	Oklahoma	Buck 46463 (DUKE 0138952)		This study; Magain et al. 2018	
+P2115	Peltigera_vainioi	peltigeraceae	peltigera	no	terricolous	symbiotic	Colombia		Miadlikowska s.n. (ANDES)		This study; Magain et al. 2018	
+P2123	Peltigera_canina_1	peltigeraceae	peltigera	no	terricolous	symbiotic	France	Corsica	Vust 6412 (G)		This study; Magain et al. 2018	
+P2152	Peltigera_soredians	peltigeraceae	peltigera	no	terricolous	symbiotic	Ecuador		Kalb 39785 (DUKE)		This study; Magain et al. 2018	
+P2162	Peltigera_erioderma_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Papua New Guinea		Sérusiaux s.n. (LG)		This study; Magain et al. 2018	
+P2164	Peltigera_sp_17	peltigeraceae	peltigera	no	terricolous	symbiotic	Peru		Miadlikowska s.n. (DUKE 0357990)		This study; Magain et al. 2018	
+P2170	Peltigera_degenii	peltigeraceae	peltigera	no	terricolous	symbiotic	Ukraine		Dymytrova & Savchyn 22 (KW)		This study; Magain et al. 2018	
+P2180	Peltigera_ponojensis_monticola_1a	peltigeraceae	peltigera	no	terricolous	symbiotic	United States of America	Oregon	McCune 29956 (OSC)		This study; Magain et al. 2018	
+P2213	Peltigera_canina_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	British Columbia	Goward 5305 (UBC)		This study; Magain et al. 2018	
+P2224	Peltigera_neocanina_3	peltigeraceae	peltigera	no	terricolous	symbiotic	China	Yunnan	Goffinet 9979 (CONN)		This study; Magain et al. 2018	
+P3034	Peltigera_occidentalis	peltigeraceae	peltigera	no	terricolous	symbiotic	Russia	Khabarovsk Territory	Lutzoni and J. Miadlikowska 07.26.2013-P3034; DUKE 		This study; Chagnon et al. 2018	
+P3068	Peltigera_neopolydactyla_5	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	British Columbia	T. Goward 09-232; UBC		This study; Chagnon et al. 2018	
+P330	Peltigera_truculenta	peltigeraceae	peltigera	no	terricolous	symbiotic	Chile		T. Wheeler 3826; T. Wheeler Private Coll.		This study; Magain et al. 2017	
+P5023	Peltigera_scabrosa	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	"57.91304°N, 72.07611°W"	J. Miadlikowska and F. Lutzoni (DUKE)		This study; Lu et al. 2018	
+P539	Peltigera_hymenina	peltigeraceae	peltigera	no	terricolous	symbiotic	Norway		Magain s.n.; LG		This study; Magain et al. 2017	
+P607	Peltigera_sp_3	peltigeraceae	peltigera	no	terricolous	symbiotic	New Zealand		S. Stenroos 5820; H		This study; Magain et al. 2017	
+P6447	Peltigera_collina	peltigeraceae	peltigera	no		symbiotic	Canada	ABMI 691	ABMI ID 10057		This study	Tree/Other
+P6465	Peltigera_neopolydactyla_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 608	ABMI ID 307340		This study	log/stump
+P6524	Peltigera_praetextata	peltigeraceae	peltigera	no		symbiotic	Canada	ABMI 877	ABMI ID 250894		This study	Tree/Other
+P6600	Peltigera_canina_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Québec			This study; Darnajoux et al. 2019	
+P6602	Peltigera_scabrosa_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Québec			This study; Darnajoux et al. 2019	
+P6620	Peltigera_neopolydactyla_	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Québec			This study; Darnajoux et al. 2019	
+P6636	Peltigera	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	Québec			This study; Darnajoux et al. 2019	
+P6963	Peltigera_nana	peltigeraceae	peltigera	no	terricolous	symbiotic	Malaysia	GoLife Malaysia-KinabaluHQ-1-C1-P1	N. Magain Malaysia-KinabaluHQ-1-C1-P1-L1 (DUKE)		This study	on mosses on soil
+P6970	Peltigera_serusiauxii	peltigeraceae	peltigera	no	terricolous	symbiotic	Malaysia	GoLife Malaysia-Kinabalu-3-C3-P1	N. Magain Malaysia-Kinabalu-3-C3-P1-L6 (DUKE)		This study	on mossy slope
+P8202	Peltigera_latiloba	peltigeraceae	peltigera	no		symbiotic	Canada	ABMI 499	ABMI ID 1276480		This study	Tree/Other
+P8219	Peltigera_islandica	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI OG-ABMI-477-21	ABMI ID 616803		This study	Wetland
+P8231	Peltigera_ponojensis_monticola_1a	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1285	ABMI ID 802891 		This study	Rock
+P8256	Peltigera_didactyla_3	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 210	ABMI ID 1264020		This study	Upland
+P8569	Peltigera_elisabethae	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1269920		This study	Log/Stump
+P8570	Peltigera_canina_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1269815		This study	Upland
+P8571	Peltigera_praetextata	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1269801		This study	Upland
+P8575	Peltigera_neckeri	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1269817		This study	Upland
+P8577	Peltigera_aphthosa_5	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1270086		This study	log/stump
+P8580	Peltigera_canina_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1293	ABMI ID 1269794		This study	Upland
+P8690	Peltigera_malacea_3	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1030	ABMI ID 292089		This study	Upland
+P8768	Peltigera_aff_didactyla	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI OG-ABMI-1368-1	ABMI ID 159071		This study	Upland
+P8840	Peltigera_leucophlebia_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 1070	ABMI ID 391119		This study	UH
+P8857	Peltigera_scabrosa_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 576	ABMI ID 618295		This study	Upland
+P8926	Peltigera_malacea_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 83	ABMI ID 58543		This study	Upland
+P9119	Peltigera_frippii	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 6	ABMI ID 90575		This study	Rock
+P9121	Peltigera_neopolydactyla_1	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 450	ABMI ID 44943		This study	Wetland
+P943	Peltigera_extenuata_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Colombia		Lücking 33627 (UDBC)		This study	
+P9639	Fuscopannaria_sp	pannariaceae	fuscopannaria	no	terricolous	symbiotic	Canada	ABMI 37	ABMI ID 1260051		This study	
+P9728	Peltigera_malacea_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 659	ABMI ID 758897		This study	
+P9820	Peltigera_canina_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 916	ABMI ID 160887		This study	log/stump
+P9822	Peltigera_malacea_2	peltigeraceae	peltigera	no	terricolous	symbiotic	Canada	ABMI 941	ABMI ID 251055		This study	Upland
+P9895	Nephroma_resupinatum	nephromataceae	nephroma	yes		symbiotic	Canada	ABMI 930	ABMI ID 1388226		This study	log/stump
+S1	Pannariaceae	pannariaceae	pannariaceae	no		symbiotic						
+S10	Fuscopannaria	pannariaceae	fuscopannaria	yes	epiphytic	symbiotic						
+S11	Fuscopannaria	pannariaceae	fuscopannaria	no	epiphytic	symbiotic						
+S12	Kroswia	pannariaceae	kroswia	no		symbiotic						
+S13	Kroswia	pannariaceae	kroswia	no		symbiotic						
+S14	Peltigera_pacifica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S15	Peltigera_pacifica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S16	Peltigera_pacifica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S17	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S18	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S19	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S2	Pannariaceae	pannariaceae	pannariaceae	no		symbiotic						
+S20	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S21	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S22	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S23	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S24	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S25	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S26	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S27	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S29	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S3	Pannariaceae	pannariaceae	pannariaceae	no		symbiotic						
+S30	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S31	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S32	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S33	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S34	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S35	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S37	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S38	Peltigera_vitikainenii	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S39	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S40	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S41	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S42	S42	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S43	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S44	Peltigera	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S45	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S46	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S47	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S48	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S49	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S4	Lepidocollema_sp	pannariaceae	lepidocollema	no		symbiotic						
+S5	Physma_sp	pannariaceae	physma	no		symbiotic						
+S51	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S52	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S53	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S54	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S55	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S56	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S57	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S58	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S6	Lepidocollema_sp	pannariaceae	lepidocollema	no		symbiotic						
+S60	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S61	Peltigera_asiatica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S62	Peltigera_asiatica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S63	Peltigera_asiatica	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S64	Peltigera_mikado	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S66	Peltigera_mikado	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S67	Peltigera_gayae	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S68	Peltigera_gayae	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S8	Physma_sp	pannariaceae	physma	no		symbiotic						
+S82	Peltigera_pulverulenta_3	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S83	Peltigera_pulverulenta_3	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S85	Peltigera_dolichorhiza	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S86	Peltigera_pulverulenta	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S88	Peltigera_pulverulenta_2	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S9	Physma_sp	pannariaceae	physma	no		symbiotic						
+S90	Peltigera_sp_6	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S91	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S92	Peltigera_sp_1	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S93	Peltigera_appalachensis	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S94	Peltigera_dolichorhiza_2	peltigeraceae	peltigera	no	terricolous	symbiotic						
+S95	Peltigera_sp_2b	peltigeraceae	peltigera	no	terricolous	symbiotic						
+X2	Peltigera_aff_neorufescens	peltigeraceae	peltigera	no	terricolous	symbiotic						
