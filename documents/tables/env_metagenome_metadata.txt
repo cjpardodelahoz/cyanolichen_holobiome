@@ -1,0 +1,13 @@
+sample_id	neighbor_specimen_id	lifestyle
+n1_top	n1	bryophyte_associated
+n2_top	n2	bryophyte_associated
+n3_top	n3	bryophyte_associated
+m1_top	m1	bryophyte_associated
+m2_top	m2	bryophyte_associated
+m3_top	m3	bryophyte_associated
+c1_top	c1	bryophyte_associated
+c2_top	c2	bryophyte_associated
+c3_top	c3	bryophyte_associated
+e1_top	e1	bryophyte_associated
+e2_top	e2	bryophyte_associated
+e3_top	e3	bryophyte_associated

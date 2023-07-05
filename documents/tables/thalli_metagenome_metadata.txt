@@ -1,0 +1,13 @@
+specimen_id	morpho_species	latitud	longitude	lifestyle
+n1	peltigera_neopolydactyla	55.24340	-114.03753	lichenized
+n2	peltigera_neopolydactyla	55.24327	-114.03751	lichenized
+n3	peltigera_neopolydactyla	55.24323	-114.03737	lichenized
+m1	peltigera_malacea	55.24313	-114.03712	lichenized
+m2	peltigera_malacea	55.24297	-114.03661	lichenized
+m3	peltigera_malacea	55.24348	-114.03718	lichenized
+c1	peltigera_canina	55.24292	-114.03722	lichenized
+c2	peltigera_canina	55.24286	-114.03728	lichenized
+c3	peltigera_canina	55.24280	-114.03725	lichenized
+e1	peltigera_elisabethae	55.24348	-114.03765	lichenized
+e2	peltigera_elisabethae	55.24346	-114.03772	lichenized
+e3	peltigera_elisabethae	55.24346	-114.03743	lichenized

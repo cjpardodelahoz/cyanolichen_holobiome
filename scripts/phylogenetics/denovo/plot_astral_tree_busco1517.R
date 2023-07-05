@@ -4,7 +4,9 @@
 library(tidyverse)
 library(data.table)
 library(ape)
+library(tidytree)
 library(ggtree)
+library(ggtreeExtra)
 library(treeio)
 
 ##### COMPILE LIFESTYLE METADATA #####
@@ -25,8 +27,6 @@ set_1_symbiotic_key <- set_1_raw_metadata %>%
   filter(lifestyle == "symbiotic") %>%
   select(host_family) %>%
   distinct() %>%
-  mutate(host_family =
-           str_to_lower(host_family)) %>%
   add_column(lifestyle_e = 
                c("bryophyte_associated", "bryophyte_associated", 
                  "cycad_symbiont", "lichenized", "lichenized", "lichenized", 
@@ -104,6 +104,25 @@ all_sets_lifestyle <- bind_rows(set_1_lifestyle, set_11_lifestyle,
                                 set_2_lifestyle, env_metagenomes_lifestyle) %>%
   right_join(tip_labels, by = "tip_label") %>%
   select(tip_label, lifestyle_e, this_study) %>%
-  rename(lifestyle = lifestyle_e)
+  rename(lifestyle = lifestyle_e) %>%
+  distinct()
 
 ##### PLOT TREE WITH METADATA #####
+
+# Load tree and append metadata
+tree <- read.tree(file = "analyses/phylogenetics/denovo/astral/astral.tree") %>%
+  treeio::root(outgroup = c("Aphanizomenon_flos_aquae_NIES_81",
+                            "Anabaena_cylindrica_PCC_7122",
+                            "Cylindrospermum_stagnale_PCC_7417"), 
+               resolve.root = T)
+tree$edge.length[is.na(tree$edge.length)] <- 1
+tree <- as_tibble(tree) %>%
+  left_join(all_sets_lifestyle, by = c("label" = "tip_label")) %>%
+  as.treedata()
+
+# Colors for categories
+lifestyle_colors <- c("azolla_symbiont" = )
+#
+ggtree(tree, layout="circular", branch.length = 'none') +
+  geom_tippoint(aes(color = factor(lifestyle), shape = factor(this_study))) +
+  scale_color_brewer(palette = "Set3")
