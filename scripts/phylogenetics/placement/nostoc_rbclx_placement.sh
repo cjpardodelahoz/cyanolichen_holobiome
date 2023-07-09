@@ -13,7 +13,7 @@ module load RAxML/8.2.12
 wd="/work/dg304/dala/cyanolichen_holobiome"
 # Run placement
 raxmlHPC-PTHREADS-SSE3 -f v \
- -s analyses/phylogenetics/placement/rbclx/alignments/rbclx_all_ref_query_aln_edited.phy \
+ -s analyses/phylogenetics/placement/rbclx/alignments/rbclx_all_ref_query_aln.phy \
  -t analyses/phylogenetics/placement/rbclx/trees/rbclx_nostoc_ref.tree \
  -w ${wd}/analyses/phylogenetics/placement/rbclx/trees \
  -m GTRCAT -n epa_result -T 4

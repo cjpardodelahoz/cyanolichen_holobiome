@@ -186,12 +186,15 @@ sbatch scripts/phylogenetics/denovo/busco1517_astral.sh
 
 
 # Single locus placements
+# Diego extracted the 16S and rbcLX from the metagenomes and metatranscriptomes
+# (sets XXX) using nHMMER. These are the sequences we are going to place.
 
 # Align and trim nostoc rbclx and 16S ref and query seqs
+# I edited alignments with Mesquite and exported in phylip for RAxML
 sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement_align.sh
+sbatch scripts/phylogenetics/placement/nostocales_16s_placement_align.sh
 sbatch scripts/phylogenetics/placement/nostoc_16s_placement_align.sh
 # EPA placement of rbcLX nostoc seqs
-sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement.sh
 sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement.sh
 
 ##### RNA READS #####
