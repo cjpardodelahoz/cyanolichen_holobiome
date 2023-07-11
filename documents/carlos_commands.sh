@@ -196,6 +196,10 @@ sbatch scripts/phylogenetics/placement/nostocales_16s_placement_align.sh
 sbatch scripts/phylogenetics/placement/nostoc_16s_placement_align.sh
 # EPA placement of rbcLX nostoc seqs
 sbatch scripts/phylogenetics/placement/nostoc_rbclx_placement.sh
+# EPA placement of 16S seqs
+sbatch scripts/phylogenetics/placement/nostocales_nostoc_16s_placement.sh
+# Plot trees with single locus queries
+Rscript scripts/phylogenetics/placement/single_locus_placement_processing.R
 
 ##### RNA READS #####
 

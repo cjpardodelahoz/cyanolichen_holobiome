@@ -108,6 +108,8 @@ all_sets_lifestyle <- bind_rows(set_1_lifestyle, set_11_lifestyle,
   mutate(source = 
            replace_na(source, "public")) %>%
   distinct()
+# Save lifestyle metadata table
+write_csv(all_sets_lifestyle, "documents/tables/all_sets_lifestyle.csv")
 
 ##### PLOT TREE WITH METADATA #####
 
