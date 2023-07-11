@@ -63,6 +63,34 @@ tip_metadata <- rbclx_tree$tip.label %>%
   left_join(all_sets_lifestyle, by = c("taxon" = "tip_label"))
 
 
+#### PARSE 16S PLACEMENT TREE AND QUERIES ####
+
+# Remove non-nostoc queries
+
+# Load trees with EPA placements
+nostocales_16s_tree <- read.tree("analyses/phylogenetics/placement/16S/trees/RAxML_labelledTree.nostocales_epa_result")
+nostoc_16s_tree <- read.tree("analyses/phylogenetics/placement/16S/trees/RAxML_labelledTree.nostoc_epa_result")
+# Save nostocales 16S placement tree in newick to open with FigTRee
+write.tree(nostocales_16s_tree, file = "analyses/phylogenetics/placement/16S/trees/nostocales_placement.tree")
+# Get query labels that are NOT in Nostoc s. str.
+all_16s_queries <- nostocales_16s_tree$tip.label %>%
+  as_tibble() %>%
+  filter(str_detect(value, "QUERY")) %>%
+  pull(value)
+nostoc_node <- MRCA(nostocales_16s_tree, c("Nostoc_sp_JC1668", "Nostoc_sp_KVJ20"))
+nostoc_16s_queries <- tree_subset(nostocales_16s_tree, node = nostoc_node, 
+                                  levels_back = 0)$tip.label %>%
+  as_tibble() %>%
+  filter(str_detect(value, "QUERY")) %>%
+  pull(value)
+non_nostoc_16s_queries <- setdiff(all_16s_queries, nostoc_16s_queries)
+# Remove non-nostoc queries from Nostoc placement tree
+nostoc_16s_tree <- drop.tip(nostoc_16s_tree, non_nostoc_16s_queries)
+# Save nostoc 16S placement tree in newick to open with FigTRee
+write.tree(nostoc_16s_tree, file = "analyses/phylogenetics/placement/16S/trees/nostoc_placement.tree")
+
+  
+
 #### PLOT RBCLX TREES ####
 
 # Prepare the main placement tree
