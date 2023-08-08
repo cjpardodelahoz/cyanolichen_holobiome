@@ -168,4 +168,47 @@ mkdir analyses/phylogenetics/placement/busco26/sequences/all_sets/nucleotides
 mkdir analyses/phylogenetics/placement/busco26/sequences/all_sets/amino_acids
 cat documents/loci_sets/busco26_nostocales_odb10.txt | while read line; do touch analyses/phylogenetics/placement/busco26/sequences/all_sets/nucleotides/${line}.fna | touch analyses/phylogenetics/placement/busco26/sequences/all_sets/amino_acids/${line}.faa;done
 for i in 1 5 6; do cat documents/loci_sets/busco26_nostocales_odb10.txt | while read line; do cat analyses/phylogenetics/placement/busco26/sequences/set_${i}/nucleotides/${line}.fna >> analyses/phylogenetics/placement/busco26/sequences/all_sets/nucleotides/${line}.fna | cat analyses/phylogenetics/placement/busco26/sequences/set_${i}/amino_acids/${line}.faa >> analyses/phylogenetics/placement/busco26/sequences/all_sets/amino_acids/${line}.faa ; done ;done
-
+# sorting and extracting the seuqences from set_2, set_5, set_6, and set_11 from the BUSCO analysis of all the loci in the nostocales_odb
+sh scripts/seeds/seed_sorting_aligning_busco_loci.sh set_10 documents/set_information/set_10_genome_names.txt yes pal2nal analyses/phylogenetics/denovo documents/loci_sets/busco1517_nostocales_odb10.txt analyses/nostoc_genomes_busco/set_1 run_nostocales_odb10 no 1000 yes 1 4 busco_sorting logs/phylogenetics/denovo/set_10 scripts/phylogenetics/denovo scavenger yes
+sh scripts/seeds/seed_sorting_aligning_busco_loci.sh set_2 documents/set_information/set_2_genome_names.txt yes pal2nal analyses/phylogenetics/denovo documents/loci_sets/busco1517_nostocales_odb10.txt analyses/nostoc_genomes_busco/set_2 run_nostocales_odb10 no 1000 yes 1 4 busco_sorting logs/phylogenetics/denovo/set_2 scripts/phylogenetics/denovo scavenger yes
+sh scripts/seeds/seed_sorting_aligning_busco_loci.sh set_5 documents/set_information/set_5_genome_names.txt yes pal2nal analyses/phylogenetics/denovo documents/loci_sets/busco1517_nostocales_odb10.txt analyses/nostoc_genomes_busco/set_5 run_nostocales_odb10 no 1000 yes 1 4 busco_sorting logs/phylogenetics/denovo/set_5 scripts/phylogenetics/denovo scavenger yes
+sh scripts/seeds/seed_sorting_aligning_busco_loci.sh set_6 documents/set_information/set_6_genome_names.txt yes pal2nal analyses/phylogenetics/denovo documents/loci_sets/busco1517_nostocales_odb10.txt analyses/nostoc_genomes_busco/set_6 run_nostocales_odb10 no 1000 yes 1 4 busco_sorting logs/phylogenetics/denovo/set_6 scripts/phylogenetics/denovo scavenger yes
+# Concatenating all the results in file for the nucleotides and amino acids respectively
+mkdir analyses/phylogenetics/denovo/sequences/all_sets
+mkdir analyses/phylogenetics/denovo/sequences/all_sets/nucleotides
+mkdir analyses/phylogenetics/denovo/sequences/all_sets/amino_acids
+cat documents/loci_sets/busco1517_nostocales_odb10.txt | while read line; do touch analyses/phylogenetics/denovo/sequences/all_sets/nucleotides/${line}.fna | touch analyses/phylogenetics/denovo/sequences/all_sets/amino_acids/${line}.faa; done
+for i in 11; do cat documents/loci_sets/busco1517_nostocales_odb10.txt | while read line; do cat analyses/phylogenetics/denovo/sequences/set_${i}/${line}.fna >> analyses/phylogenetics/denovo/sequences/all_sets/nucleotides/${line}.fna | cat analyses/phylogenetics/denovo/sequences/set_${i}/${line}.faa >> analyses/phylogenetics/denovo/sequences/all_sets/amino_acids/${line}.faa; done ; done
+# Creating a script to do a remote blast search on the nhmmer rbclx retrieved sequences
+nano scripts/illumina/blast_plus/metragenomics_thalli_nostoc_blast.sh 
+# Doing the same for the three other libraries of data from 8066 and 8117
+nano scripts/illumina/blast_plus/metragenomics_environment_nostoc_blast.sh 
+nano scripts/rna/blast_plus/metatranscriptomics_environment_nostoc_blast.sh
+nano scripts/rna/blast_plus/metatranscriptomics_thalli_nostoc_blast.sh
+# Making a mock folder to try to change names from two of the samples
+# Running again the rbclx and 16s searching from the data in 8117
+sh scripts/seeds/seed_nhmmer_search_extraction.sh metatranscriptomics_environment documents/sample_names/8117_environmental_samples.txt yes metag analyses/rna 2 1.0e-60 1.0e-60 no no - misc_files/alignments/rbclx_hhmer_profile.fna rbclx dna +- 0 analyses/rna/assemblies/spades/8117/contigs _transcripts.fasta 0 0 yes 6 nhmmer logs/rna/nhmmer/metatranscriptomics_environment scripts/rna/nhmmer/metatranscriptomics_environment scavenger yes
+sh scripts/seeds/seed_nhmmer_search_extraction.sh metatranscriptomics_environment documents/sample_names/8117_environmental_samples.txt yes metag analyses/rna 2 1.0e-60 1.0e-60 no no - misc_files/alignments/rbclx_hhmer_profile.fna rbclx dna +- 0 analyses/rna/assemblies/spades/8117/contigs _transcripts.fasta 0 0 yes 6 nhmmer logs/rna/nhmmer/metatranscriptomics_environment scripts/rna/nhmmer/metatranscriptomics_environment scavenger yes
+sh scripts/seeds/seed_nhmmer_search_extraction.sh metatranscriptomics_thalli documents/sample_names/8117_thalli_samples.txt yes metag analyses/rna 2 1.0e-300 0 no no - misc_files/alignments/16s_nostoc.fna 16S dna +- 0 analyses/rna/assemblies/spades/8117/contigs _transcripts.fasta 0 0 yes 6 nhmmer logs/rna/nhmmer/metatranscriptomics_thalli scripts/rna/nhmmer/metatranscriptomics_thalli scavenger yes
+sh scripts/seeds/seed_nhmmer_search_extraction.sh metatranscriptomics_environment documents/sample_names/8117_environmental_samples.txt yes metag analyses/rna 2 1.0e-300 0 no no - misc_files/alignments/16s_nostoc.fna 16S dna +- 0 analyses/rna/assemblies/spades/8117/contigs _transcripts.fasta 0 0 yes 6 nhmmer logs/rna/nhmmer/metatranscriptomics_environment scripts/rna/nhmmer/metatranscriptomics_environment scavenger yes
+# Running the nhmmer script on the sets 6 and 10 for extraction of 16S
+sh scripts/seeds/seed_nhmmer_search_extraction.sh set_6 documents/set_information/set_6_genome_names.txt yes metag analyses/phylogenetics/placement 1 1.0e-300 0 no no - misc_files/alignments/16s_nostoc.fna 16S dna +- 0 analyses/nostoc_genomes/set_6 .fna 0 0 yes 4 nhmmer logs/phylogenetics/placement/nhmmer/set_6 scripts/phylogenetics/placement/nhmmer/set_6 scavenger yes
+sh scripts/seeds/seed_nhmmer_search_extraction.sh set_10 documents/set_information/set_10_genome_names.txt yes metag analyses/phylogenetics/placement 1 1.0e-300 0 no no - misc_files/alignments/16s_nostoc.fna 16S dna +- 0 analyses/nostoc_genomes/set_10 .fna 0 0 yes 4 nhmmer logs/phylogenetics/placement/nhmmer/set_10 scripts/phylogenetics/placement/nhmmer/set_10 scavenger yes
+# Running the nhmmer script on the sets 6 and 10 for extraction of rbclx
+# Putting all the sequences obtained with the nhmmer analysis into one directory
+ls analyses/phylogenetics/placement/nhmmer/set_10/ | grep -v all | while read line; do cp analyses/phylogenetics/placement/nhmmer/set_10/${line}/sequences/rbclx/dna/single_hits/${line}_rbclx_*_length_* analyses/phylogenetics/placement/nhmmer/set_10/all_samples/rbclx/ ; done
+ls analyses/phylogenetics/placement/nhmmer/set_10/ | grep -v all | while read line; do cp analyses/phylogenetics/placement/nhmmer/set_10/${line}/sequences/16S/dna/single_hits/${line}_16S_*_length_* analyses/phylogenetics/placement/nhmmer/set_10/all_samples/16S/ ; done
+ls analyses/phylogenetics/placement/nhmmer/set_6/ | grep -v all | while read line; do cp analyses/phylogenetics/placement/nhmmer/set_6/${line}/sequences/rbclx/dna/single_hits/${line}_rbclx_*_length_* analyses/phylogenetics/placement/nhmmer/set_6/all_samples/rbclx/ ; done
+ls analyses/phylogenetics/placement/nhmmer/set_6/ | grep -v all | while read line; do cp analyses/phylogenetics/placement/nhmmer/set_6/${line}/sequences/16S/dna/single_hits/${line}_16S_*_length_* analyses/phylogenetics/placement/nhmmer/set_6/all_samples/16S/ ; done
+# Creation of two new datasets: set_12 and set_13 that contain the metatranscriptomics concatenated assemblies obtained just with spades and with kraken+spades respectively
+for i in 12 13; do mkdir analyses/nostoc_genomes/set_${i}; done
+for num in 1 2 3; do for i in c e m n; do touch analyses/nostoc_genomes/set_13/${i}${num}l_concatenated_contigs.fna; cat analyses/rna/assemblies/kraken_extracted_reads/nostoc_8117/contigs/${i}${num}cl_contigs.fasta analyses/rna/assemblies/kraken_extracted_reads/nostoc_8117/contigs/${i}${num}l_contigs.fasta >> analyses/nostoc_genomes/set_13/${i}${num}l_concatenated_contigs.fna ; done; done
+for num in 1 2 3; do for i in c e m n; do touch analyses/nostoc_genomes/set_12/${i}${num}l_concatenated_contigs.fna; cat analyses/rna/taxonomy/8117_contigs/sequences/${i}${num}cl/${i}${num}cl_Nostoc.fasta analyses/rna/taxonomy/8117_contigs/sequences/${i}${num}l/${i}${num}l_Nostoc.fasta >> analyses/nostoc_genomes/set_12/${i}${num}l_concatenated_contigs.fna ; done; done
+# Creating a directory to locate the analyses on Comparative genomics of all the sets
+mkdir -p analyses/comparative_genomics
+# We will use DRAM to annotate the primary metabolism of all the sets. For the secondary metabolism we will use AntiSmash
+# I will create folders to hols the scripts and the logs for the metabolic annotation
+for i in logs scripts; do mkdir -p ${i}/comparative_genomics; done
+for i in dram antismash; do mkdir -p scripts/comparative_genomics/${i}; done
+for i in dram antismash; do mkdir -p logs/comparative_genomics/${i}; done
+# I have made individual scripts for to process each of the sets
